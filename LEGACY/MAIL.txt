@@ -1,0 +1,29 @@
+Hola Riccardo,
+
+Te adjunto el codigo con el que hice el catalogo de candidatas a
+binarias. Reconozco que no es un codigo muy legible, porque no lo hice
+pensando en que lo iba a distribuir, pero de todos modos se entiende
+Los scripts son:
+ - tgas_query.py: hace la consulta al archivo de gaia, con las
+                  condiciones que podemos poner a este nivel. Como el
+                  resultado es grande, la consulta se divide en
+                  varios trabajos. La consulta es asincrona, se manda
+                  al servidor de gaia, y el script simplemente se guarda
+                  el numero de trabajo. Debeis poner vuestro usuario
+                  y contraseña en gaia
+ - tgas_result.py: cuando las consultas han terminado en el servidor
+                   de gaia, se deben recoger los resultados. Este
+                   script lo hace. Debeis poner vuestro usuario y
+                   contraseña en gaia
+ - extract_tgas_votable.py: una vez tenemos los resultados en el disco,
+                  este script los lee y los escribe en la base de
+                  datos Mysql(debeis poner vuestro usuario de la base
+                  de datos local en el codigo). El propio
+                  script crea la estructura de la DB
+ - compute_prob_candidate.py: este es el script que calcula
+                  las probabilidades de tener un par de
+                  compañeras
+ - binaries_common.py: contiene algunas funciones que se usan
+                  en varios sitios
+
+Saludos            

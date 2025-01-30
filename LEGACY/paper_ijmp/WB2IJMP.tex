@@ -1,0 +1,741 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Trim Size: 9.75in x 6.5in
+%% Text Area: 8in (include Runningheads) x 5in
+%% ws-ijmpd.tex   :     19-4-07
+%% Tex file to use with ws-ijmpd.cls written in Latex2E.
+%% The content, structure, format and layout of this style file is the
+%% property of World Scientific Publishing Co. Pte. Ltd.
+%% Copyright 1995, 2002 by World Scientific Publishing Co.
+%% All rights are reserved.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+%\documentclass[draft]{ws-ijmpd}
+\documentclass{ws-ijmpd}
+\usepackage[super,compress]{cite}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{lscape}
+\begin{document}
+
+\markboth{X. Hernandez et al.}
+{Wide binaries challenging a Newtonian prediction}
+
+%%%%%%%%%%%%%%%%%%%%% Publisher's Area please ignore %%%%%%%%%%%%%%%
+%
+\catchline{}{}{}{}{}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Challenging a Newtonian prediction through Gaia wide binaries}
+
+\author{X. Hernandez}
+
+\address{Instituto de Astronom\'{\i}a, Universidad Nacional Aut\'{o}noma de M\'{e}xico, \\
+ Apartado Postal 70--264 C.P. 04510 \\ M\'exico D.F. M\'exico.\\
+xavier@astro.unam.mx}
+
+\author{R. A. M. Cort\'es}
+
+\address{Instituto de Astronom\'{\i}a, Universidad Nacional Aut\'{o}noma de M\'{e}xico, \\
+ Apartado Postal 70--264 C.P. 04510 \\ M\'exico D.F. M\'exico.\\
+rcortes@astro.unam.mx}
+
+\author{C. Allen}
+
+\address{Instituto de Astronom\'{\i}a, Universidad Nacional Aut\'{o}noma de M\'{e}xico, \\
+ Apartado Postal 70--264 C.P. 04510 \\ M\'exico D.F. M\'exico.\\
+chris@astro.unam.mx}
+
+
+\author{R. Scarpa}
+
+\address{Instituto de Astrof\'{\i}sica de Canarias, c/via Lactea s/n \\
+San Cristobal de la Laguna 38205, Spain\\
+Departamento de Astrof\'{\i}sica, Universidad de La Laguna (ULL)\\
+38206 La Laguna, Tenerife, Spain.\\
+riccardo.scarpa@gtc.iac.es}
+
+
+
+
+\maketitle
+
+\begin{history}
+\received{Day Month Year}
+\revised{Day Month Year}
+\end{history}
+
+\begin{abstract}
+Under Newtonian dynamics, the relative motion of the components of a binary star should follow a Keplerian  
+  scaling with separation. Once orientation effects and a
+  distribution of ellipticities are accounted for, dynamical evolution can be modelled to include the effects
+  of Galactic tides and stellar mass perturbers, over the lifetime of the solar neighbourhood. This
+  furnishes a prediction for the relative velocity between the components of a binary and their
+  projected separation. Taking a carefully selected small sample of 81 solar neighbourhood wide binaries from the 
+  {\it Hipparcos} catalogue, we identify these same stars in the recent Gaia DR2, to test
+  the prediction mentioned using the latest and most accurate astrometry available. The results are consistent
+  with the Newtonian prediction for projected separations below 7000 AU, but inconsistent with it
+  at larger separations, where accelerations are expected to be lower than the critical $a_{0}=1.2 \times
+  10^{-10} $ { m s$^{-2}$} value of MONDian gravity. This result challenges Newtonian gravity at low
+  accelerations and shows clearly the appearance of gravitational anomalies of the type usually attributed to dark
+  matter at galactic scales, now at much smaller stellar scales.
+\end{abstract}
+
+\keywords{ Gravitation; star binary; general.}
+
+\ccode{PACS numbers: 04.50.Kd, 95.35.+d, 97.10.Vm, 97.80.−d}
+
+
+
+%\tableofcontents
+
+\section{Introduction}	
+
+In galactic dynamics, the range of systems over which gravitational anomalies appear in the low acceleration regime extends across
+vast astronomical scales. Ultra faint dwarf galaxies with scale radii of order a few tens of parsecs show stellar velocity dispersions
+implying Newtonian mass to light ratios in the hundreds or even thousands (e.g. Ref.~\refcite{Ko15}). The classical dwarfs have sizes
+of order a kpc and mass to light ratios derived from observed stellar kinematics inconsistent
+with those of naked stellar populations under standard gravity by well over an order of magnitude (e.g. Ref.~\refcite{Sa12}). This
+reflects what is observed in spiral galaxies at tens of kpc, where rotation curves (e.g. Ref.~\refcite{Le17}) again yield
+dynamics not corresponding to Newtonian dynamics given the empirically determined matter content. The trend has been extended to
+include elliptical galaxies observed out to their external low acceleration regions recently by Ref.~\refcite{Du18}, and 
+even for the case of Galactic globular clusters where velocity dispersion profiles suggest a change away from Newtonian dynamics
+for low accelerations e.g. (Ref.~\refcite{Sc03}, Ref.~\refcite{Sc11}).
+
+Empirically, the above gravitational anomalies can be described by MONDian dynamics (Ref.~\refcite{Mi84}, Ref.~\refcite{Sa02}),
+where below an acceleration threshold of $a_{0}=1.2 \times 10^{-10}$ { m s$^{-2}$} kinematics stop falling along Newtonian expectations
+of $v\propto R^{-1/2}$ to flatten out at the { Tully-Fisher} values of $V_{TF}=(G M a_{0})^{1/4}$ for centrifugal equilibrium velocities
+or corresponding velocity dispersions for pressure supported systems, where $M$ is the total baryonic mass of the system in question.
+The standard interpretation of this being the presence of dominant halos of a yet undetected hypothetical dark matter component
+surrounding the astrophysical systems being observed.
+
+Wide binary pairs in the solar neighbourhood offer an opportunity to probe dynamics at low accelerations on the smallest
+astrophysical scales. In principle these can yield crucial restrictions on the structure of gravity at low accelerations and lengths
+where the presence of dark matter is not expected. For a solar mass binary, at separations of above $3.4\times 10^{-2}$pc,
+$7000$ AU, accelerations will fall below $a_{0}$ under Newtonian expectations. A first attempt in this direction was made by
+two of us in Ref.~\refcite{He12} where we used the Ref.~\refcite{Sh11} -henceforth SO11- carefully selected sample of
+{\it Hipparcos} wide binaries. This catalogue includes a full Bayesian model and use of local 5-dimensional phase space
+density to identify wide binary candidates and rigorously assign a probability that each candidate forms a physical system,
+rather than being the result of chance associations.
+
+
+Retaining a sample of binaries from SO11 { where} contamination was limited to less than $10\%$,
+in  Ref.~\refcite{He12} results indicated relative velocities for the binary pairs studied above the Newtonian
+expectations for accelerations below $a_{0}$. This remains true even after accounting for projection effects, ellipticity distributions
+and disruption and evolution of ionised binaries due to the Galactic tidal field and encounters with field stars and stellar remnants,
+as modelled by  Ref.~\refcite{Ji10}, albeit the relatively large errors in proper motions present in the {\it Hipparcos} catalogue.
+
+
+One of us, in  Ref.~\refcite{Sc17}, explored the problem using a small sample of 60 candidate wide binaries with projected
+separations between 0.004 and 1.0 pc. That study found that a number of wide binaries are capable of surviving the galactic tides and
+stellar encounters of the solar neighbourhood dynamical environment, with a small sub-sample of the widest pairs showing kinematics
+more consistent with MONDian dynamics than Newtonian ones. More recently, theoretical studies by Ref.~\refcite{Pi18}
+and Ref.~\refcite{Ban18} confirmed that Gaia data, in terms of expected number of detected wide binaries and confidence
+intervals for the relevant proper motions and parallaxes, are sufficient to detect MONDian deviations from Newtonian
+dynamics in the low acceleration regime probed by these systems, should they be present.
+
+
+The obvious next step is to reproduce the careful and detailed procedure presented in SO11, but using
+this time the Gaia DR2 catalogue. This painstaking approach will ultimately furnish a definitive answer regarding the
+presence of gravitational anomalies at stellar scales in the low acceleration regime, but is currently
+hampered by our incomplete understanding of the problems still
+present in the data of the very novel Gaia DR2. For example, only about two
+thirds of the Hipparcos2 sources have Gaia DR2 counterparts (Ref.~\refcite{Ma18}). Also, Gaia treats all binaries closer
+than about 1" (depending on the magnitude difference) as single sources, which may give anomalous parallaxes, and the
+parallax solutions may be more sensitive to duplicity in certain areas, etc. (see
+Ref.~\refcite{Ga18} A1 for some of the known issues.)
+
+
+
+A first order sampling of the issue can be more directly probed by taking advantage of the correspondence between the
+Gaia and the {\it Hipparcos} catalogues. One can take the sample selection from the accurate Bayesian analysis of SO11,
+and the actual astrometric data from the Gaia DR2. Here we present results of such an approach, yielding
+a small sample of 81 wide binaries from the original SO11 catalogue having a $<10\%$ probability of being chance
+associations, Gaia DR2 data consistent with the original {\it Hipparcos} reported quantities, and consistent parallaxes for both
+components in the Gaia DR2. Although it is only a reduced sample,
+the superior quality of the Gaia satellite allows us to infer relative velocities for the binaries in question
+to a much higher degree of accuracy than what was available to Ref.~\refcite{He12}. Interestingly, our results
+show a departure from Newtonian predictions as projected separations grow beyond the critical
+0.034 pc. Indeed, our new results are consistent with what was reported in Ref.~\refcite{He12}: the mean
+values of the inferred relative velocities are essentially unchanged, with the error bars showing a dramatic reduction.
+This effectively rules out the Newtonian prediction of Ref.~\refcite{Ji10} and provides solid evidence for a gravitational
+anomaly in the low acceleration regime, this time at stellar scales.
+
+Por l
+
+\section{Sample selection}
+
+As outlined in the introduction, the sample selection is based on the wide binary catalogue of SO11,
+which was constructed using a very detailed Bayesian procedure. This identifies and quantifies the probability of each binary pair
+being an actual physical system, rather than the result of projection effects or chance associations, including also the
+Tycho-2 and the {\it Tycho} double star catalogues (Ref.~\refcite{Ho00} and Ref.~\refcite{Fa02}). To that end a 5-dimensional
+space of spatial positions and proper motions was cross-correlated with a galactic phase-space density library, { explicitly
+excluding the largest known local star clusters}, to identify binary candidates as significant local over-densities in phase
+space. Corrections due to spherical projections effects were also considered, to yield a catalogue of 840 wide binaries with projected
+separations of between 0.003 and 10 pc and, crucially, a well determined probability of chance association, $P_{ch}$. Taking only those
+pairs where this probability satisfies $P_{ch}<10 \%$, reduces the original SO11 sample to 359 wide binaries. This catalogue is also
+narrowly restricted in spectral type for both primaries and companions of each binary, yielding stars in a narrow range of masses centred
+on $0.5 M_{\odot}$. This last is important as it allows a clean comparison to the fixed mass binary simulations of Ref.~\refcite{Ji10},
+see below. Following the original SO11 terminology, the brightest star in each binary system is termed the primary.
+
+The SO11 search criteria ensure the absence of near neighbours, and results in binary candidates with separations
+which are always many times smaller than the typical interstellar separations at the location of the binaries in question. 
+Extensive testing with synthetic samples in SO11 guarantees the catalogue includes very few multiple systems with
+undetected extra companions and is highly complete in the 6 to 100 pc distance range from the Sun.
+
+We now take advantage of the {\it Hipparcos} to Gaia DR2 correspondence availability to search for the updated astrometry of
+the 359 $P_{ch}<10\%$ wide binary SO11 sample in the Gaia DR2. The search returns only 151 pairs where each component
+of the SO11 binaries appears in the Gaia DR2 with two proper motion parameters and measured parallax.
+This is not surprising, since only about two thirds of the Hipparcos2 sources have
+Gaia DR2 counterparts (Ref.~\refcite{Ma18}). It is not yet clear why there are so many
+sources missing. According to the above authors a combination of effects may be
+present. As each binary is excluded if either component is absent from the DR2, the fraction we obtain is typical.
+Next, the SO11 catalogue returns a few systems where more than one secondary is identified as the companion to a given
+primary, and also cases where a single secondary is identified as the companion to more than one primary. We remove all these
+cases of multiple identifications, bringing the sample down to 131 binaries. 
+	
+%\begin{figure}[pb]
+%\centerline{\psfig{file=fig01.ps,width=7cm}}
+%\vspace*{8pt}
+%\caption{Comparison of SO11 {\it Hipparcos} and Gaia DR2 proper motion data in right ascension for each of the
+%  two components of the binaries studied. The agreement with the identity line in the majority of cases shows the stars in question
+%  have been successfully identified from the first catalogue to the Gaia DR2 sample.}
+%\end{figure}
+
+%\begin{figure}[pb]
+%\centerline{\psfig{file=fig02.ps,width=7cm}}
+%\vspace*{8pt}
+%\caption{Comparison of SO11 {\it Hipparcos} and Gaia DR2 proper motion data in declination for each of the
+%  two components of the binaries studied. The agreement with the identity line in the majority of cases shows the stars in question
+%  have been successfully identified from the first catalogue to the Gaia DR2 sample.}
+%\end{figure}
+
+%\begin{figure}[pb]
+%\centerline{\psfig{file=fig03.ps,width=7cm}}
+%\vspace*{8pt}
+%\caption{Comparison of the Gaia DR2 reported parallax for the two distinct components of each of the binaries studied. The
+%  disagreement of only a handful of cases with the identity line allows to exclude such discordant pairs as part of the
+%  expected $10\%$ misidentified binaries in the original SO11 catalogue, or as misidentified stars in
+%  going from the {\it Hipparcos} catalogue to the Gaia DR2.}
+%\end{figure}
+
+
+
+A first test of the reliability with which the {\it Hipparcos} binaries have been identified in the Gaia DR2 comes from
+comparing the proper motion measurements reported in SO11 with the corresponding measurements
+reported in the Gaia DR2. This is shown in Figures 1 and 2, { where} the ranges shown in the axes were chosen so as to display
+clearly most of our sample; a handful of very discordant systems do not appear in the plots, as they are very far from
+the identity line shown. It is clear that in most cases, the proper motion values reported by both satellites are in agreement
+with each other, to within their respective confidence intervals, the {\it Hipparcos} error ranges being much larger than the
+Gaia DR2 ones. Still, we introduce a cut to remove from consideration any binary candidate { where} for any component the
+{\it Hipparcos} and Gaia DR2 data are more than $3\sigma$ from each other. Our final results are not sensitive
+to this threshold, provided the few discordant misidentified binaries are removed. This cut leaves us with only 117 stellar pairs.
+Next, as shown in Figure 3, we check that the Gaia DR2 reported parallax measurements for each of the primaries and companions are
+not discordant, and remove from the sample any binary where the distances to each component are not within 13\% of each other.
+This exclusion criterion identifies 17 candidates, { thus reducing} the sample to 100 pairs. Notice that the
+test shown in Figures 1 and 2 effectively gives us a 10 year baseline which, on top of the robustness in the SO11 catalogue
+towards multiple systems, where no radial velocities are involved, removes any remaining binary where a third component might
+be altering proper motions with timescales shorter than 10 years (see Ref.~\refcite{Ban18}).
+
+Finally, we take advantage of the Gaia radial velocity measurements (when available) and remove any binaries where the radial
+velocity difference, $\Delta V_{r}$, between both components is larger than $4$ { km s$^{-1}$}. The resulting cut is not very
+sensitive to this velocity threshold, as the removed binary pairs typically have much larger and discordant $\Delta V_{r}$ values,
+with an average value for those removed of $\Delta V_{r}=28$ { km s$^{-1}$}. Our final sample comprises 81 binary pairs.
+
+Thus, we have prefered very strict cuts to our final sample which leave us with modest numbers, but guarantee the exclusion
+of misidentified stars in going from {\it Hipparcos} data to Gaia DR2 and chance alignment contamination in the original
+SO11 catalogue, all of which become conspicuous in the comparisons presented in this section. Table 1 summarises the Gaia DR2
+properties used and catalogue numbers from both {\it Hipparcos} and Gaia for the primaries and companions of all the binaries used,
+together with the results of the exclusion criteria described.
+
+\section{Gaia wide binary projected kinematic results}
+
+%\begin{figure}[pb]
+%\centerline{\psfig{file=PointsLast.ps,width=7cm}}
+%\vspace*{8pt}
+%\caption{One dimensional relative velocities for the final binary sample, showing both results from using only right
+%  ascension data, and from using only declination values, with corresponding error bars.}
+%\end{figure}
+
+
+%\begin{figure}[pb]
+%\centerline{\psfig{file=AveragesLast.ps,width=7cm}}
+%\vspace*{8pt}
+%\caption{The solid curve shows the rms. value for the one dimensional relative velocity between the components of a present
+%  day Solar Neighbourhood binary as a function of projected separation, for the Newtonian prediction of Ref. \citen{Ji10}.
+%  The same quantity for the SO11 wide binary catalogue stars, this time using Gaia DR2 data, is shown by the
+%  points with error bars, circles for right ascension data and triangles for declination. A small artificial horizontal offset
+%  was introduced on both data sets to avoid having overlapping error bars. The inconsistency of the observed
+%  data with the Newtonian prediction is obvious, for separations greater than the 7000 AU at which accelerations are expected to
+%  drop below {$a_{0}$}. This threshold is indicated by the dashed vertical line.}
+%\end{figure}
+
+
+In Ref.~\refcite{He12} we calculated the projected separation in the plane of the sky using only the parallax to the
+primary of each binary, but given the higher quality Gaia DR2 data, we now compute the projected separation between the
+components of each binary using explicitly the observed Gaia positions and parallaxes to each component of the binary.
+The average parallax to both components is used to gauge the distance to each pair. Using reported Gaia proper motions,
+the relative velocity difference in one dimension is calculated for each binary twice, once considering only right ascension
+proper motions, and once considering only declination proper motions. In all cases the relative physical motion is calculated
+including full spherical geometric effects (e.g. Ref.~\refcite{Sm68}), and not under the more standard small angle approximation.
+This requires the radial velocity of at least one component, which we have for 71 of our 81 final pairs. For the remaining
+10, a $V_{r}=0$ was assumed for the effects of the above correction (e.g. SO11). The effects of the above refinement are only
+relevant for the nearest and widest of pairs, in our sample only a few individual systems, as can be readilly cheched from the
+data used and shown in table 1.
+
+
+Figure 4 gives the two $\Delta v_{1D}$ measurements for each binary pair in the final sample, with corresponding $1\sigma$
+error bars. A clear flat upper envelope is evident. In Figure 5 we show the rms. value for the one dimensional velocity
+differences described above, plotted against projected separations in a binned logarithmic scale, circles and triangles for
+right ascension and declination data, respectively. The horizontal error bars give the bin sizes, while the vertical ones
+show the contribution of Gaia reported errors and error propagation, to which a Poisson contribution has been added, and
+which given the small numbers of binaries in each bin (21, 23, 17, 8 and 12, from left to right), actually dominates the
+error budget in most cases. The dashed vertical line appears at 7000 AU, the approximate scale where acceleration is expected
+to drop below $a_{0}$.
+
+
+
+Also shown in Figure 5 are the Newtonian predictions for this same quantity from Ref.~\refcite{Ji10}, where large
+collections of 50,000 simulated binaries are modelled for a range of plausible distributions of ellipticities, and
+followed dynamically under Newtonian expectations within the local Galactic tidal field. These are also subject to the effects of
+field star and field stellar remnant bombardment for a 10 Gyr period. Finally, the resulting bound and un-bound stellar
+pairs are projected along a fiducial line of sight to yield a robust prediction for the expected $<\Delta v^{2}_{1D}>^{1/2}$
+as a function of $\Delta r$, solid curve. This results are easy to understand; a $\Delta v \propto \Delta r^{-1/2}$ trend
+is apparent, down to the tidal radius of the problem which appears at 1.7 pc. Beyond this point, ionised binaries
+continue to move along practically common Galactic orbits, with relative velocities which show a mild enhancement which
+then levels off at close to $0.1$ km s$^{-1}$.
+
+It is clear that to the left of the $a_{0}$ dashed line, our results are consistent within confidence intervals with the
+Newtonian expectations. However, in going to separations larger than 7000AU, the observed points stop following the expected
+trend and actually level off at a $\Delta v$ amplitude close to the values seen at the $a_{0}$ point, reproducing qualitatively
+the phenomenology seen in galactic rotation curves.
+
+This result for the binary sample presented is extremely challenging to a Newtonian point of view, where the relative
+velocities are expected to be much lower than observed. Given the construction of the SO11 sample, binaries with small
+velocity differences would appear as stronger local over densities in phase space, and hence, selection criteria, if anything,
+are biased against binaries with large velocity differences, not small ones. Thus, from a Newtonian point of view, bound binaries
+with separations smaller that the tidal radius of 1.7 pc and larger than 7000 AU are unexpectedly missing. Also, as already
+mentioned in Ref.~\refcite{Oh17}, a population
+of non-chance associated binaries appears at scales above 7000AU having relative velocities over an order of magnitude above
+bound expectations, { with relative velocities of $\sim$ 1 km s$^{-1}$ and separations of a few pc, the dynamical ages of
+un-bound systems are of only a few $10^6$ years.} What sustains and replenishes these populations under a Newtonian framework?
+At separations below the 1.7 pc tidal radius of the problem, bound binaries should appear, under a Newtonian framework. 
+
+
+Furthermore, the results shown in figure 5  confirm what was presented in  Ref.~\refcite{He12}, though
+the much coarser {\it Hipparcos} data of that first study yielded significantly larger error bars. That those first
+results might have been the result of missed biases or simply the error structure of the {\it Hipparcos} data now appears
+very unlikely, as we see two consistent results coming from data obtained by two completely independent satellites. Indeed,
+the error bars have significantly shrunk, with central results changing little. Note also that the two $\Delta v_{1D}$
+estimates we obtain, using only right ascension or only declination data, are consistent with each other.
+
+A potential caveat on the interpretation presented comes from the possible  presence of a population of misidentified
+binaries being actually parts of loose, dissolving moving groups.  Ref.~\refcite{Oh17} recently showed that although isolated
+wide binaries dominate, a search algorithm of the type used in SO11 could also pick up a fraction of misidentified
+binaries being part of larger moving groups, many of the smallest of which probably remain undiscovered. A full answer
+and validation or otherwise of our results, necessarily awaits a much more extensive study through the full Gaia catalogue,
+and a fuller exploration and understanding of the phase-space structure and over-densities of the Solar Neighbourhood and
+local Milky Way disk environment.
+
+Although the gravitational anomaly detected appears on crossing the $a_{0}$ threshold of MOND, in MOND as such, the results
+are equally unexpected as the external field effect of MOND (or AQUAL e.g.  Ref.~\refcite{Sa02} should dominate. Given
+that the
+orbital acceleration of the solar neighbourhood is higher than the internal acceleration of the binaries in question, in
+MOND as such, only a very modest enhancement of the effective value of G would be expected (e.g.  Ref.~\refcite{Pi18}).
+Thus, within a MONDian frame our results imply not the most well studied version, but rather a variant where the external
+field effect does not appear, or is much suppressed e.g. as in  Ref.~\refcite{Mi11}. In terms of covariant extensions to GR having a
+MONDian low velocity limit, it is hard to know to what extent an external field effect might be present in many of the recently
+developed options (e.g. the f(R) variants reviewed in Ref.~\refcite{Ca11}, the emergent gravity of Ref.~\refcite{Ve17}
+or the F(R,L) proposal of Ref.~\refcite{Bar18}, so our results then serve as constraints in terms of requiring a
+minimal external field effect, at least for the sub-parsec scales in the solar neighbourhood explored.
+
+\section{Final remarks}
+
+
+We have presented a sample of 81 wide binaries which were very carefully selected against chance associations or projection
+effects through the cross correlation of the {\it Hipparcos}, Tycho-2 and the {\it Tycho} double star catalogues, amongst others,
+with the detailed 5-dimensional phase space structure of the solar neighbourhood by SO11. By taking advantage
+of the cross-identification of the {\it Hipparcos} catalogue and the Gaia DR2 data, we updated the parallax and proper motion
+observations of SO11 to use exclusively Gaia DR2 astrometry.
+
+These binaries are then compared to Newtonian predictions for the expected one dimensional rms. relative velocity between the
+components of each binary and their projected separations, including modeling orientation effects, a number of plausible
+distributions of ellipticities and, crucially, the effects of Galactic tides and stellar and stellar remnant perturbers over a
+10 Gyr period, by Jiang \& Tremaine (2010).
+
+For separations below 7000 AU, where accelerations are expected to be above the $a_{0}=1.2\times 10^{-10}$ { m s$^{-2}$} of MOND,
+we find the data to be consistent with the Newtonian predictions. For projected separations above 7000 AU however, the
+data are inconsistent with Newtonian predictions. This challenges the validity of Newtonian dynamics at
+the low acceleration regime, and shows the existence of gravitational anomalies of the type generally attributed to the
+presence of a hypothetical and dominant dark matter component, this time down to the relatively tiny sub-parsec stellar scales.
+
+
+\begin{table}[ph]
+\tbl{Comparison of acoustic for frequencies for piston-cylinder problem.}
+{\begin{tabular}{@{}cccc@{}} \toprule
+Piston mass & Analytical frequency & TRIA6-$S_1$ model &
+\% Error \\
+& (Rad/s) & (Rad/s) \\ \colrule
+1.0\hphantom{00} & \hphantom{0}281.0 & \hphantom{0}280.81 & 0.07 \\
+0.1\hphantom{00} & \hphantom{0}876.0 & \hphantom{0}875.74 & 0.03 \\
+0.01\hphantom{0} & 2441.0 & 2441.0\hphantom{0} & 0.0\hphantom{0} \\
+0.001 & 4130.0 & 4129.3\hphantom{0} & 0.16\\ \botrule
+\end{tabular} \label{ta1}}
+\end{table}
+
+If tables need to extend over to a second page, the continuation of
+the table should be preceded by a caption, e.g.~``{\it Table 2.}
+$(${\it Continued}$)$''.
+
+
+ \tiny
+ \begin{landscape}
+\begin{longtable}{rrrrrrrrrrl}
+\toprule
+      Index &    HIP2 & \multicolumn{1}{c}{GDR2} & \multicolumn{1}{c}{$\alpha$} & \multicolumn{1}{c}{$\delta$} & \multicolumn{1}{c}{$\mu_\alpha$} & \multicolumn{1}{c}{$\mu_\delta$} & \multicolumn{1}{c}{$v_r$} & \multicolumn{1}{c}{$d$} & \multicolumn{1}{c}{$\log_{10}(\Delta R)$} & Exclusion\\
+ \cmidrule(lr){6-7} \cmidrule(lr){9-10}
+\multicolumn{1}{c}{SO11}  &  & & \multicolumn{2}{c}{(deg)} & \multicolumn{2}{c}{(mas/yr)} & \multicolumn{1}{c}{(km/s)} & \multicolumn{2}{c}{(pc)}& \multicolumn{1}{c}{Test} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{11}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+
+\bottomrule
+\\
+\caption{ {\it Hipparcos} and Gaia identification numbers for the 133 binary stars used, together with Gaia DR2 data and results of the
+      exclusion tests performed: (a) shows an individual star excluded (which results in the exclusion of the respective binary) for
+      having an inconsistent proper motion in right ascension between {\it Hipparcos} and the DR2, (b) the corresponding result for
+      declination, (c) shows a binary excluded for having discordant parallaxes to both components (distance differences larger than
+      13 \%) in the DR2 data, and (d) gives binaries removed for having DR2 radial velocity differences $>4$ km s$^{-1}$, with the
+      81 retained binaries appearing blank in this column. Upper rows give data of primaries and lower ones of secondaries.}
+
+
+
+
+\endlastfoot
+  \hline 16 &   15371 &      4722135642226356736 &                    49.565826 &                   -62.503574 &               1331.151$\pm$0.355 &                648.523$\pm$0.431 &          12.01$\pm$  0.32 &        12.046$\pm$0.027 &                                           &                                                    \\
+            &   15330 &      4722111590409480064 &                    49.454851 &                   -62.572523 &               1337.591$\pm$0.142 &                649.930$\pm$0.154 &          12.21$\pm$  0.17 &        12.039$\pm$0.011 &                          -1.744$\pm$0.002 &                                                    \\
+  \hline 17 &   17414 &        43335880716390784 &                    55.969727 &                    16.670667 &                157.945$\pm$0.086 &               -316.326$\pm$0.052 &          34.18$\pm$  0.15 &        17.209$\pm$0.012 &                                           &                                                    \\
+            &   17405 &        43335537119008896 &                    55.939232 &                    16.665933 &                156.215$\pm$0.089 &               -310.291$\pm$0.064 &          34.22$\pm$  1.08 &        17.239$\pm$0.014 &                          -2.051$\pm$0.001 &                                                    \\
+  \hline 21 &   19859 &      3285218186904332288 &                    63.869527 &                     6.186399 &               -109.700$\pm$0.095 &               -107.368$\pm$0.079 &          -7.21$\pm$  0.15 &        22.087$\pm$0.026 &                                           &                                                    \\
+            &   19855 &      3285218255623808640 &                    63.857006 &                     6.199170 &               -101.763$\pm$0.080 &               -111.982$\pm$0.055 &          -7.93$\pm$  0.16 &        22.104$\pm$0.022 &                          -2.163$\pm$0.001 &                                                    \\
+  \hline 22 &   23693 &      4763906879239461632 &                    76.377477 &                   -57.472197 &                -32.140$\pm$0.276 &                117.417$\pm$0.310 &          -1.15$\pm$  0.22 &        11.625$\pm$0.020 &                                           &                                                    \\
+            &   23708 &      4763897739549071744 &                    76.447122 &                   -57.553318 &                -32.784$\pm$0.049 &                119.633$\pm$0.054 &          -0.88$\pm$  0.16 &        11.698$\pm$0.003 &                          -1.740$\pm$0.001 &                                                    \\
+  \hline 25 &   25278 &      3400292798990117888 &                    81.107227 &                    17.383504 &                250.765$\pm$0.316 &                 -7.332$\pm$0.209 &          37.67$\pm$  0.24 &        14.585$\pm$0.037 &                                           &                                                    \\
+            &   25220 &      3394298532176344960 &                    80.911047 &                    17.324092 &                251.000$\pm$0.092 &                 -5.778$\pm$0.068 &          37.94$\pm$  0.13 &        14.565$\pm$0.011 &                          -1.301$\pm$0.001 &                                                    \\
+  \hline 28 &   26690 &      3395863205942142976 &                    85.075658 &                    15.350146 &                  2.551$\pm$0.100 &                -36.058$\pm$0.080 &                           &       167.953$\pm$2.110 &                                           &                                                    \\
+            &   26844 &      3347826784173590656 &                    85.495633 &                    15.337041 &                 79.115$\pm$0.087 &                -43.071$\pm$0.068 &                           &        22.423$\pm$0.025 &                          -0.172$\pm$0.010 &                                                  c \\
+  \hline 29 &   26779 &       263916708025623680 &                    85.334752 &                    53.478804 &                  2.784$\pm$0.075 &               -523.602$\pm$0.072 &           1.07$\pm$  0.18 &        12.280$\pm$0.007 &                                           &                                                    \\
+            &   26801 &       263916742385357056 &                    85.378072 &                    53.487581 &                  3.915$\pm$0.078 &               -515.938$\pm$0.078 &           1.92$\pm$  0.27 &        12.278$\pm$0.008 &                          -2.234$\pm$0.001 &                                                    \\
+  \hline 65 &   62229 &      6060965699625586176 &                   191.308450 &                   -57.358567 &               -201.033$\pm$0.052 &               -131.548$\pm$0.046 &          14.76$\pm$  0.16 &        19.808$\pm$0.018 &                                           &                                                    \\
+            &   69570 &      6092573252981419776 &                   213.602784 &                   -48.147162 &               -102.218$\pm$0.095 &               -121.897$\pm$0.120 &         -23.92$\pm$  0.13 &        37.842$\pm$0.087 &                           0.910$\pm$0.002 &                                                c,d \\
+  \hline 73 &   70529 &      1254695603704323712 &                   216.434870 &                    23.612274 &                792.548$\pm$0.092 &              -1116.601$\pm$0.111 &           8.78$\pm$  0.21 &        16.346$\pm$0.014 &                                           &                                                    \\
+            &   70536 &      1254694882149817728 &                   216.448113 &                    23.615657 &                793.487$\pm$0.085 &              -1119.010$\pm$0.095 &                           &        16.339$\pm$0.014 &                          -2.445$\pm$0.004 &                                                    \\
+  \hline 80 &   79755 &      1642641410934267008 &                   244.172569 &                    67.239204 &               -498.018$\pm$0.050 &                 84.110$\pm$0.053 &         -19.86$\pm$  0.19 &        10.768$\pm$0.004 &                                           &                                                    \\
+            &   79762 &      1642642957122493824 &                   244.183431 &                    67.256628 &               -483.168$\pm$0.066 &                 89.266$\pm$0.072 &                           &        10.765$\pm$0.005 &                          -2.473$\pm$0.001 &                                                    \\
+  \hline 81 &   80337 &      6018047019138644480 &                   246.005789 &                   -39.192966 &                 74.146$\pm$0.306 &                  3.666$\pm$0.226 &          12.89$\pm$  0.13 &        12.908$\pm$0.023 &                                           &                                                    \\
+            &   80300 &      6018034958869558912 &                   245.891422 &                   -39.229487 &                 77.135$\pm$0.147 &                  0.334$\pm$0.110 &                           &        12.914$\pm$0.012 &                          -1.666$\pm$0.001 &                                                    \\
+  \hline 85 &   83591 &      4364527594192166400 &                   256.260183 &                    -5.071414 &               -916.562$\pm$0.155 &              -1138.804$\pm$0.104 &          34.14$\pm$  0.15 &        10.466$\pm$0.007 &                                           &                                                    \\
+            &   83599 &      4364480521350598144 &                   256.303450 &                    -5.099110 &               -917.276$\pm$0.098 &              -1131.947$\pm$0.065 &          34.44$\pm$  0.44 &        10.456$\pm$0.006 &                          -2.029$\pm$0.001 &                                                    \\
+  \hline 87 &   84405 &      4109030160308317312 &                   258.835189 &                   -26.607739 &               -466.541$\pm$0.646 &              -1142.063$\pm$0.451 &                           &         5.960$\pm$0.008 &                                           &                                                    \\
+            &   84478 &      4109034455276324608 &                   259.053369 &                   -26.550990 &               -479.850$\pm$0.101 &              -1124.545$\pm$0.068 &          -0.04$\pm$  0.22 &         5.950$\pm$0.003 &                          -1.675$\pm$0.001 &                                                  b \\
+ \hline 112 &     493 &      2797111130991722240 &                     1.477436 &                    18.234370 &               -150.936$\pm$0.121 &               -147.985$\pm$0.089 &         -45.70$\pm$  0.16 &        37.429$\pm$0.102 &                                           &                                                    \\
+            &     495 &      2773086595766697856 &                     1.480470 &                    18.075245 &               -147.614$\pm$0.094 &               -145.798$\pm$0.079 &         -45.00$\pm$  0.74 &        37.683$\pm$0.085 &                          -0.982$\pm$0.002 &                                                    \\
+ \hline 130 &    7699 &      4911275281704066048 &                    24.782478 &                   -56.429512 &                 91.146$\pm$0.041 &                -31.652$\pm$0.041 &           9.48$\pm$  0.31 &        46.855$\pm$0.061 &                                           &                                                    \\
+            &    6485 &      4909846500703006976 &                    20.839305 &                   -57.480902 &                 92.790$\pm$0.045 &                -36.082$\pm$0.038 &           8.62$\pm$  0.21 &        45.315$\pm$0.053 &                           0.284$\pm$0.001 &                                                    \\
+ \hline 132 &    9487 &      2517584007848935808 &                    30.511899 &                     2.763759 &                 32.692$\pm$0.940 &                 -2.895$\pm$0.821 &                           &        50.506$\pm$1.707 &                                           &                                                  b \\
+            &    9519 &      2517585927699042944 &                    30.611532 &                     2.815808 &                 36.368$\pm$0.126 &                -10.811$\pm$0.098 &           4.58$\pm$  0.16 &        48.404$\pm$0.137 &                          -1.014$\pm$0.016 &                                                    \\
+ \hline 140 &   11477 &      4967177781457918976 &                    37.007194 &                   -33.811016 &                 18.526$\pm$0.121 &                  5.163$\pm$0.193 &                           &        47.258$\pm$0.315 &                                           &                                                    \\
+            &   11448 &      4967153630858709120 &                    36.926542 &                   -33.896542 &                 18.383$\pm$0.030 &                  4.481$\pm$0.052 &          12.26$\pm$  0.17 &        47.708$\pm$0.075 &                          -1.046$\pm$0.004 &                                                  b \\
+ \hline 155 &   15304 &        10584899657116672 &                    49.360666 &                     7.655784 &                166.360$\pm$0.071 &                 -6.237$\pm$0.062 &          31.35$\pm$  0.20 &        47.288$\pm$0.092 &                                           &                                                    \\
+            &   15310 &        10608573516849536 &                    49.387317 &                     7.690127 &                168.749$\pm$0.073 &                 -6.314$\pm$0.063 &          31.90$\pm$  0.15 &        47.269$\pm$0.088 &                          -1.447$\pm$0.002 &                                                    \\
+ \hline 157 &   15527 &      5060104351007433472 &                    50.016623 &                   -28.854353 &                349.057$\pm$0.036 &                -65.299$\pm$0.041 &          39.89$\pm$  0.13 &        36.024$\pm$0.041 &                                           &                                                    \\
+            &   15526 &      5060105892897388288 &                    50.013976 &                   -28.784118 &                348.847$\pm$0.065 &                -66.663$\pm$0.076 &          40.31$\pm$  0.14 &        36.009$\pm$0.052 &                          -1.355$\pm$0.001 &                                                    \\
+ \hline 173 &   22534 &      4777112872882315264 &                    72.734825 &                   -53.459330 &                -80.769$\pm$0.929 &                 85.658$\pm$0.968 &           6.44$\pm$  3.13 &        38.970$\pm$0.624 &                                           &                                                    \\
+            &   22562 &      4777119126354782592 &                    72.835038 &                   -53.405518 &                -82.413$\pm$0.043 &                 83.684$\pm$0.052 &          10.70$\pm$  0.49 &        38.006$\pm$0.032 &                          -1.268$\pm$0.008 &                                                  d \\
+ \hline 175 &   24046 &      3422042582096699520 &                    77.517088 &                    27.556119 &                197.860$\pm$0.093 &                -89.579$\pm$0.056 &          15.64$\pm$  0.16 &        40.470$\pm$0.074 &                                           &                                                    \\
+            &   24035 &      3422047495539178496 &                    77.504564 &                    27.642799 &                198.179$\pm$0.596 &                -88.591$\pm$0.357 &          21.24$\pm$  0.43 &        40.295$\pm$0.457 &                          -1.210$\pm$0.006 &                                              a,b,d \\
+ \hline 187 &   33705 &      5607190344506642432 &                   105.040814 &                   -31.141532 &                 18.789$\pm$0.043 &                 35.596$\pm$0.049 &          16.61$\pm$  0.17 &        38.123$\pm$0.043 &                                           &                                                    \\
+            &   33691 &      5607189485513198208 &                   105.011544 &                   -31.227929 &                 18.893$\pm$0.061 &                 36.119$\pm$0.065 &          16.83$\pm$  0.21 &        38.356$\pm$0.061 &                          -1.222$\pm$0.001 &                                                    \\
+ \hline 190 &   34714 &       890422213103244544 &                   107.830615 &                    33.111833 &               -110.510$\pm$0.075 &                 -7.495$\pm$0.066 &           3.05$\pm$  0.24 &        45.125$\pm$0.095 &                                           &                                                    \\
+            &   34700 &       890346243721923968 &                   107.810770 &                    32.614987 &               -110.866$\pm$0.102 &                 -6.789$\pm$0.088 &           3.02$\pm$  0.33 &        44.748$\pm$0.143 &                          -0.409$\pm$0.002 &                                                    \\
+ \hline 195 &   37718 &      5493209501673364736 &                   116.051359 &                   -50.456108 &               -114.435$\pm$0.047 &                143.459$\pm$0.042 &           8.69$\pm$  0.37 &        30.084$\pm$0.022 &                                           &                                                    \\
+            &   37727 &      5493209437253410432 &                   116.067894 &                   -50.466001 &               -111.783$\pm$0.060 &                142.603$\pm$0.053 &           9.16$\pm$  0.30 &        30.080$\pm$0.027 &                          -2.120$\pm$0.002 &                                                    \\
+ \hline 201 &   42401 &      5746824674801810816 &                   129.688303 &                   -13.256527 &                -63.858$\pm$0.051 &                 38.374$\pm$0.041 &          20.53$\pm$  0.25 &        31.596$\pm$0.032 &                                           &                                                    \\
+            &   41662 &      5751951182125903872 &                   127.418304 &                    -9.976270 &                -56.556$\pm$0.064 &                 34.122$\pm$0.050 &           2.30$\pm$  0.24 &        35.328$\pm$0.055 &                           0.364$\pm$0.001 &                                                  d \\
+ \hline 204 &   43970 &       610526719204475136 &                   134.312562 &                    15.322854 &                 60.337$\pm$0.292 &                 19.748$\pm$0.221 &                           &        48.401$\pm$0.415 &                                           &                                                    \\
+            &   44001 &       610549499710989440 &                   134.396934 &                    15.581374 &                 60.440$\pm$0.161 &                 20.509$\pm$0.106 &                           &        48.801$\pm$0.233 &                          -0.638$\pm$0.006 &                                                    \\
+ \hline 207 &   44858 &       692119656035933568 &                   137.099198 &                    27.535750 &                -53.239$\pm$0.128 &                 71.659$\pm$0.096 &          30.02$\pm$  0.22 &        48.891$\pm$0.237 &                                           &                                                    \\
+            &   44864 &       692120029700390912 &                   137.112900 &                    27.543447 &                -51.819$\pm$0.113 &                 73.524$\pm$0.074 &          30.31$\pm$  0.14 &        49.124$\pm$0.230 &                          -1.910$\pm$0.007 &                                                    \\
+ \hline 215 &   51312 &       749786562715192320 &                   157.213545 &                    34.885408 &               -111.186$\pm$0.069 &                -62.017$\pm$0.069 &           4.11$\pm$  0.17 &        49.344$\pm$0.126 &                                           &                                                    \\
+            &   52140 &       748360706587700352 &                   159.782027 &                    32.832960 &               -110.338$\pm$0.106 &                -58.939$\pm$0.087 &          -0.60$\pm$  0.17 &        50.382$\pm$0.138 &                           0.411$\pm$0.002 &                                                  d \\
+ \hline 218 &   52787 &      3550081879381593728 &                   161.879229 &                   -22.348154 &               -124.690$\pm$0.115 &                -28.341$\pm$0.084 &          23.85$\pm$  0.25 &        33.612$\pm$0.085 &                                           &                                                    \\
+            &   52776 &      3550084490721711872 &                   161.855204 &                   -22.286843 &               -124.539$\pm$0.112 &                -29.837$\pm$0.070 &          23.24$\pm$  0.52 &        33.603$\pm$0.079 &                          -1.417$\pm$0.002 &                                                    \\
+ \hline 224 &   55765 &      3967618155853506304 &                   171.400912 &                    16.456513 &               -142.347$\pm$0.204 &                 -5.645$\pm$0.179 &          18.88$\pm$  0.67 &        47.198$\pm$0.296 &                                           &                                                    \\
+            &   55262 &      3965063921622777856 &                   169.776912 &                    13.390754 &               -146.589$\pm$0.080 &                 -0.006$\pm$0.069 &           8.33$\pm$  0.21 &        47.472$\pm$0.093 &                           0.454$\pm$0.004 &                                                  d \\
+ \hline 229 &   58067 &      3975129194660883328 &                   178.631559 &                    19.411157 &               -450.502$\pm$0.095 &                -16.554$\pm$0.069 &           5.94$\pm$  0.29 &        39.622$\pm$0.082 &                                           &                                                    \\
+            &   58073 &      3975223065466473216 &                   178.644111 &                    19.427759 &               -450.600$\pm$0.083 &                -15.497$\pm$0.058 &           5.76$\pm$  0.22 &        39.601$\pm$0.071 &                          -1.851$\pm$0.002 &                                                    \\
+ \hline 230 &   58085 &      5236197322996128128 &                   178.686141 &                   -66.376482 &                 13.792$\pm$0.037 &                -65.816$\pm$0.036 &          -6.80$\pm$  0.37 &        44.078$\pm$0.047 &                                           &                                                  b \\
+            &   58121 &      5236196498362394112 &                   178.814952 &                   -66.409354 &                 12.724$\pm$0.048 &                -63.279$\pm$0.045 &          -7.63$\pm$  0.13 &        44.016$\pm$0.063 &                          -1.328$\pm$0.001 &                                                    \\
+ \hline 245 &   64057 &      3945118265299248128 &                   196.914217 &                    24.010449 &               -261.638$\pm$0.077 &                148.003$\pm$0.059 &          -1.68$\pm$  0.15 &        37.442$\pm$0.053 &                                           &                                                    \\
+            &   64059 &      3945118643256370688 &                   196.918496 &                    24.020558 &               -262.455$\pm$0.078 &                146.042$\pm$0.054 &          -1.70$\pm$  0.13 &        37.433$\pm$0.051 &                          -2.150$\pm$0.003 &                                                    \\
+ \hline 253 &   67246 &      3721126409323324416 &                   206.735799 &                     6.349899 &               -510.447$\pm$0.071 &               -110.225$\pm$0.064 &         -30.42$\pm$  0.20 &        31.489$\pm$0.039 &                                           &                                                    \\
+            &   67291 &      3721114933170707328 &                   206.867792 &                     6.315179 &               -509.440$\pm$0.083 &               -111.022$\pm$0.061 &         -30.67$\pm$  0.15 &        31.332$\pm$0.045 &                          -1.128$\pm$0.001 &                                                    \\
+ \hline 264 &   73365 &      1586977844504488576 &                   224.886978 &                    45.464606 &                -33.680$\pm$0.043 &                100.046$\pm$0.044 &         -18.94$\pm$  0.14 &        33.745$\pm$0.027 &                                           &                                                    \\
+            &   73360 &      1586977737129182848 &                   224.877247 &                    45.448463 &                -35.321$\pm$0.037 &                101.074$\pm$0.039 &         -18.99$\pm$  0.26 &        33.768$\pm$0.024 &                          -1.986$\pm$0.002 &                                                    \\
+ \hline 270 &   74666 &      1278391075716738560 &                   228.876113 &                    33.314351 &                 82.549$\pm$0.554 &               -111.909$\pm$0.560 &                           &        37.342$\pm$0.531 &                                           &                                                  a \\
+            &   74674 &      1278392381386793856 &                   228.910214 &                    33.320448 &                 82.776$\pm$0.040 &               -110.040$\pm$0.044 &         -11.83$\pm$  0.18 &        36.948$\pm$0.042 &                          -1.724$\pm$0.009 &                                                    \\
+ \hline 271 &   75104 &      1277115023753077248 &                   230.207752 &                    31.480707 &               -179.339$\pm$0.036 &                139.058$\pm$0.039 &         -26.82$\pm$  0.17 &        45.885$\pm$0.055 &                                           &                                                    \\
+            &   75011 &      1277185633015465856 &                   229.916339 &                    31.843109 &               -181.021$\pm$0.033 &                139.573$\pm$0.042 &         -26.32$\pm$  0.19 &        45.433$\pm$0.057 &                          -0.456$\pm$0.001 &                                                    \\
+ \hline 284 &   79958 &      5931674608438449792 &                   244.816099 &                   -55.504655 &                  5.669$\pm$0.067 &                 18.412$\pm$0.051 &          -0.31$\pm$  0.52 &        28.113$\pm$0.029 &                                           &                                                    \\
+            &   80365 &      5831891213733627264 &                   246.077754 &                   -59.344070 &                 -3.205$\pm$0.063 &                 -5.572$\pm$0.052 &                           &   7649.524$\pm$2501.324 &                           2.417$\pm$0.283 &                                                  c \\
+ \hline 298 &   85620 &      1440518669436791296 &                   262.435226 &                    63.851870 &                  1.533$\pm$0.049 &               -182.061$\pm$0.053 &         -34.02$\pm$  0.16 &        45.738$\pm$0.051 &                                           &                                                    \\
+            &   85575 &      1440425863783337856 &                   262.319088 &                    63.868353 &                  0.864$\pm$0.053 &               -181.967$\pm$0.060 &         -33.72$\pm$  0.18 &        45.663$\pm$0.060 &                          -1.368$\pm$0.001 &                                                    \\
+ \hline 309 &   92388 &      4505477838068264064 &                   282.408880 &                    13.217640 &               -199.313$\pm$0.096 &               -223.979$\pm$0.102 &         -54.54$\pm$  0.21 &        37.760$\pm$0.068 &                                           &                                                    \\
+            &   92638 &      4312046495498949888 &                   283.121483 &                    11.209184 &               -189.830$\pm$0.070 &               -224.477$\pm$0.079 &         -22.45$\pm$  0.90 &        38.302$\pm$0.065 &                           0.150$\pm$0.002 &                                                  d \\
+ \hline 314 &   94150 &      6421542154150684160 &                   287.472100 &                   -68.424635 &                155.088$\pm$0.122 &                -42.976$\pm$0.141 &          -9.61$\pm$  0.12 &        36.982$\pm$0.122 &                                           &                                                    \\
+            &   94154 &      6421555485729063424 &                   287.479128 &                   -68.299872 &                155.710$\pm$0.036 &                -41.937$\pm$0.046 &          -9.28$\pm$  0.13 &        36.655$\pm$0.041 &                          -1.096$\pm$0.002 &                                                    \\
+ \hline 322 &   97384 &      4240508901699614976 &                   296.888713 &                     1.087910 &                -28.713$\pm$0.067 &               -226.754$\pm$0.046 &                           &        47.116$\pm$0.093 &                                           &                                                    \\
+            &   95829 &      4287506873404614784 &                   292.359656 &                     0.527119 &                -25.932$\pm$0.072 &               -237.555$\pm$0.070 &                           &        44.067$\pm$0.083 &                           0.560$\pm$0.002 &                                                    \\
+ \hline 323 &   97940 &      4240626686883261184 &                   298.562299 &                     1.942265 &                 -1.562$\pm$0.085 &               -270.206$\pm$0.052 &           9.55$\pm$  0.16 &        40.151$\pm$0.097 &                                           &                                                    \\
+            &   97950 &      4240625896609242624 &                   298.607267 &                     1.940219 &                 -0.186$\pm$0.077 &               -269.831$\pm$0.047 &          10.20$\pm$  0.20 &        40.047$\pm$0.087 &                          -1.502$\pm$0.002 &                                                    \\
+ \hline 325 &   99171 &      4236276194243977344 &                   302.008090 &                    -0.678476 &                115.520$\pm$0.095 &                -67.593$\pm$0.060 &          -3.27$\pm$  0.14 &        46.678$\pm$0.137 &                                           &                                                    \\
+            &   99100 &      4235895935019949952 &                   301.788725 &                    -0.874544 &                115.276$\pm$0.104 &                -67.915$\pm$0.050 &          -3.08$\pm$  0.14 &        46.633$\pm$0.144 &                          -0.621$\pm$0.003 &                                                    \\
+ \hline 326 &   99572 &      6879764552737781888 &                   303.108646 &                   -12.618340 &                193.068$\pm$0.111 &               -195.497$\pm$0.064 &          27.30$\pm$  0.16 &        28.249$\pm$0.054 &                                           &                                                    \\
+            &   99550 &      6879662263797806976 &                   303.040242 &                   -12.893999 &                192.627$\pm$0.068 &               -193.957$\pm$0.045 &          27.53$\pm$  0.25 &        28.248$\pm$0.033 &                          -0.854$\pm$0.001 &                                                    \\
+ \hline 331 &  100896 &      4228891667990334976 &                   306.864400 &                    -2.103364 &                -64.779$\pm$0.352 &                -67.523$\pm$0.216 &                           &        49.464$\pm$0.479 &                                           &                                                    \\
+            &  100895 &      4228891221313732864 &                   306.861958 &                    -2.119817 &                -61.630$\pm$0.099 &                -69.039$\pm$0.057 &         -14.70$\pm$  0.17 &        46.078$\pm$0.108 &                          -1.858$\pm$0.006 &                                                    \\
+ \hline 342 &  106353 &      6830027182179257472 &                   323.096671 &                   -20.957957 &               -279.074$\pm$0.103 &               -124.241$\pm$0.086 &          32.57$\pm$  0.16 &        28.740$\pm$0.061 &                                           &                                                    \\
+            &  106350 &      6830027143525634432 &                   323.086142 &                   -20.970035 &               -284.665$\pm$0.091 &               -123.311$\pm$0.075 &          33.62$\pm$  0.28 &        28.738$\pm$0.053 &                          -2.107$\pm$0.004 &                                                    \\
+ \hline 344 &  107299 &      6458951765971500672 &                   325.995032 &                   -57.325475 &               -116.563$\pm$0.062 &                -52.575$\pm$0.054 &          36.95$\pm$  0.20 &        44.462$\pm$0.089 &                                           &                                                    \\
+            &  107300 &      6458952345790198144 &                   326.000646 &                   -57.283282 &               -115.298$\pm$0.049 &                -52.865$\pm$0.045 &          37.16$\pm$  0.16 &        44.373$\pm$0.066 &                          -1.484$\pm$0.002 &                                                    \\
+ \hline 352 &  110084 &      6613555642140332672 &                   334.478622 &                   -32.479717 &                163.485$\pm$0.077 &               -203.690$\pm$0.078 &         -77.34$\pm$  0.20 &        47.692$\pm$0.111 &                                           &                                                    \\
+            &  111520 &      6620882890706789248 &                   338.918255 &                   -28.133824 &                198.181$\pm$1.765 &               -163.762$\pm$1.749 &           1.78$\pm$  0.54 &        51.467$\pm$2.529 &                           0.700$\pm$0.023 &                                                  d \\
+ \hline 359 &  112724 &      2211820991079869312 &                   342.419369 &                    66.199867 &                -63.663$\pm$0.625 &               -125.772$\pm$0.633 &                           &        37.163$\pm$0.525 &                                           &                                                    \\
+            &  112324 &      2007431640735691776 &                   341.264616 &                    58.146467 &                -62.565$\pm$0.062 &               -135.767$\pm$0.059 &         -10.25$\pm$  0.18 &        35.353$\pm$0.046 &                           0.708$\pm$0.007 &                                                    \\
+ \hline 366 &  114131 &      6541802406664428672 &                   346.719425 &                   -43.520412 &                -49.037$\pm$0.621 &                -13.454$\pm$0.651 &                           &        36.046$\pm$0.634 &                                           &                                                    \\
+            &  114112 &      6541802578463122688 &                   346.662879 &                   -43.503830 &                -47.921$\pm$0.088 &                -22.151$\pm$0.100 &          15.37$\pm$  0.23 &        40.237$\pm$0.143 &                          -1.531$\pm$0.010 &                                                    \\
+ \hline 381 &    1266 &      2428524528072046464 &                     3.966260 &                    -8.876220 &                 42.692$\pm$0.099 &                 10.121$\pm$0.050 &           7.21$\pm$  0.26 &        98.401$\pm$0.465 &                                           &                                                    \\
+            &     118 &      2428948114926672128 &                     0.386803 &                    -9.430027 &                 46.899$\pm$0.117 &                  1.430$\pm$0.085 &           1.66$\pm$  0.26 &        78.579$\pm$0.471 &                           0.742$\pm$0.005 &                                                c,d \\
+ \hline 384 &    2292 &      2526899001640197248 &                     7.316650 &                    -5.911442 &               -110.351$\pm$0.145 &               -221.185$\pm$0.071 &           9.54$\pm$  0.18 &        54.877$\pm$0.174 &                                           &                                                    \\
+            &    2350 &      2526925389919277056 &                     7.499004 &                    -5.764960 &               -107.019$\pm$0.094 &               -223.039$\pm$0.062 &           9.77$\pm$  0.27 &        55.049$\pm$0.155 &                          -0.650$\pm$0.003 &                                                    \\
+ \hline 392 &    4702 &      2356290256259997696 &                    15.117303 &                   -19.389626 &                128.469$\pm$0.101 &                -54.504$\pm$0.062 &           5.31$\pm$  0.16 &        82.225$\pm$0.309 &                                           &                                                    \\
+            &    4833 &      2356080043380354816 &                    15.529355 &                   -19.669909 &                129.340$\pm$0.085 &                -54.529$\pm$0.061 &           5.62$\pm$  0.19 &        81.436$\pm$0.274 &                          -0.165$\pm$0.003 &                                                    \\
+ \hline 402 &    6668 &       315635261093206656 &                    21.393618 &                    31.550204 &                156.296$\pm$0.086 &                -48.602$\pm$0.076 &          18.27$\pm$  0.20 &        63.089$\pm$0.207 &                                           &                                                    \\
+            &    6675 &       315635192373731328 &                    21.411410 &                    31.545948 &                155.319$\pm$0.086 &                -50.508$\pm$0.075 &                           &        63.343$\pm$0.183 &                          -1.760$\pm$0.004 &                                                    \\
+ \hline 404 &    6772 &      4916890556306664192 &                    21.776124 &                   -51.965451 &                294.867$\pm$0.051 &                 75.327$\pm$0.049 &          49.99$\pm$  0.18 &        56.705$\pm$0.096 &                                           &                                                    \\
+            &    6804 &      4916887395210737024 &                    21.895937 &                   -52.044359 &                294.046$\pm$0.032 &                 75.068$\pm$0.033 &          50.23$\pm$  0.29 &        56.764$\pm$0.068 &                          -0.971$\pm$0.001 &                                                    \\
+ \hline 405 &    7189 &      4929377881661762944 &                    23.151342 &                   -49.728032 &                -28.252$\pm$0.047 &                -73.686$\pm$0.044 &           3.37$\pm$  0.37 &        81.153$\pm$0.209 &                                           &                                                    \\
+            &    7086 &      4929369360446613248 &                    22.818624 &                   -49.904326 &                -28.369$\pm$0.040 &                -75.405$\pm$0.044 &                           &        81.000$\pm$0.207 &                          -0.406$\pm$0.002 &                                                  b \\
+ \hline 417 &   11137 &        76300510625993344 &                    35.831622 &                    15.419357 &                112.396$\pm$0.074 &                184.300$\pm$0.061 &          27.02$\pm$  0.15 &        60.120$\pm$0.132 &                                           &                                                    \\
+            &   11134 &        76300476266255488 &                    35.821737 &                    15.417794 &                111.098$\pm$0.064 &                183.174$\pm$0.050 &          27.30$\pm$  0.24 &        60.105$\pm$0.118 &                          -1.994$\pm$0.004 &                                                    \\
+ \hline 422 &   11736 &      2500621360930896640 &                    37.871913 &                     1.091259 &                -29.750$\pm$0.103 &                -23.012$\pm$0.082 &                           &       107.030$\pm$0.560 &                                           &                                                    \\
+            &   12728 &      2498487861696380672 &                    40.903989 &                    -0.344632 &                -26.869$\pm$0.069 &                -25.355$\pm$0.073 &           9.73$\pm$  0.31 &        90.724$\pm$0.345 &                           0.763$\pm$0.004 &                                                  c \\
+ \hline 426 &   13223 &        31986240656172800 &                    42.554350 &                    13.710430 &                 59.150$\pm$0.093 &                 -8.651$\pm$0.090 &         -14.72$\pm$ 15.28 &        94.865$\pm$0.546 &                                           &                                                    \\
+            &   13122 &        33216147491735808 &                    42.195278 &                    14.613596 &                 58.013$\pm$0.088 &                 -6.609$\pm$0.085 &          30.25$\pm$  0.21 &        76.807$\pm$0.280 &                           0.161$\pm$0.004 &                                                c,d \\
+ \hline 427 &   13271 &      4949158198924394496 &                    42.699429 &                   -39.932267 &                 41.760$\pm$0.052 &                 -9.937$\pm$0.057 &                           &        96.694$\pm$0.329 &                                           &                                                    \\
+            &   13499 &      4949081572411575552 &                    43.466162 &                   -40.194081 &                 42.102$\pm$0.043 &                 -6.409$\pm$0.047 &          18.12$\pm$  0.91 &        96.453$\pm$0.291 &                           0.035$\pm$0.003 &                                                    \\
+ \hline 441 &   15432 &      5047006006423053440 &                    49.720802 &                   -36.127117 &                 37.017$\pm$0.040 &                 -5.105$\pm$0.059 &                           &       105.680$\pm$0.336 &                                           &                                                    \\
+            &   15152 &      5046487311812732544 &                    48.821500 &                   -37.041717 &                 38.972$\pm$0.039 &                 -5.318$\pm$0.057 &          17.59$\pm$  0.97 &       100.649$\pm$0.266 &                           0.322$\pm$0.003 &                                                    \\
+ \hline 445 &   16410 &       117916235464382336 &                    52.833080 &                    27.571643 &                 38.561$\pm$0.106 &                -31.966$\pm$0.079 &                           &       104.541$\pm$0.602 &                                           &                                                    \\
+            &   16742 &        69733883588579840 &                    53.838995 &                    26.852557 &                 28.033$\pm$0.088 &                -31.248$\pm$0.069 &                           &       195.915$\pm$1.768 &                           0.478$\pm$0.007 &                                                  c \\
+ \hline 448 &   16959 &      4728825002249947904 &                    54.542882 &                   -59.776194 &                 26.094$\pm$0.042 &                 43.356$\pm$0.047 &                           &        76.949$\pm$0.139 &                                           &                                                    \\
+            &   16942 &      4728825036609672576 &                    54.511235 &                   -59.775713 &                 25.698$\pm$0.199 &                 44.655$\pm$0.207 &           9.03$\pm$  2.40 &        77.615$\pm$0.735 &                          -1.668$\pm$0.008 &                                                    \\
+ \hline 450 &   17486 &      4666907551119833984 &                    56.195067 &                   -70.027068 &                -10.234$\pm$0.043 &                -97.151$\pm$0.049 &          27.65$\pm$  0.14 &        55.118$\pm$0.069 &                                           &                                                    \\
+            &   17515 &      4666907516760096512 &                    56.256345 &                   -70.024519 &                 -9.249$\pm$0.048 &                -97.358$\pm$0.050 &          27.94$\pm$  0.19 &        54.988$\pm$0.074 &                          -1.693$\pm$0.002 &                                                    \\
+ \hline 462 &   20109 &      4780193841901310336 &                    64.667115 &                   -52.859782 &                 47.538$\pm$0.086 &                 72.662$\pm$0.154 &                           &        75.921$\pm$0.271 &                                           &                                                  a \\
+            &   20074 &      4780194185498710144 &                    64.564161 &                   -52.901991 &                 49.705$\pm$0.061 &                 73.646$\pm$0.100 &          21.51$\pm$  0.25 &        74.962$\pm$0.192 &                          -1.005$\pm$0.003 &                                                    \\
+ \hline 465 &   21537 &      3230677565443833088 &                    69.361411 &                     0.553169 &                 16.653$\pm$0.102 &                 11.603$\pm$0.057 &          38.60$\pm$  0.17 &        64.132$\pm$0.214 &                                           &                                                    \\
+            &   21534 &      3230677870385455232 &                    69.358778 &                     0.574687 &                 15.953$\pm$0.100 &                 12.163$\pm$0.054 &          38.97$\pm$  0.17 &        64.119$\pm$0.204 &                          -1.615$\pm$0.003 &                                                    \\
+ \hline 467 &   21704 &      2976981131534077056 &                    69.904334 &                   -21.247450 &                 12.719$\pm$0.049 &                 22.037$\pm$0.077 &           9.57$\pm$  0.16 &        83.375$\pm$0.300 &                                           &                                                    \\
+            &   21702 &      2976981337692506240 &                    69.895710 &                   -21.239607 &                 12.411$\pm$0.042 &                 22.892$\pm$0.046 &           7.96$\pm$  0.23 &        83.051$\pm$0.224 &                          -1.788$\pm$0.005 &                                                    \\
+ \hline 478 &   25453 &      3238066592819780608 &                    81.661830 &                     6.868519 &                  9.167$\pm$0.097 &                -32.465$\pm$0.080 &                           &       101.834$\pm$0.560 &                                           &                                                    \\
+            &   25483 &      3334161160308637312 &                    81.750020 &                     7.170142 &                  9.341$\pm$0.102 &                -33.164$\pm$0.089 &                           &        98.459$\pm$0.715 &                          -0.260$\pm$0.006 &                                                    \\
+ \hline 481 &   25711 &      3447142233536837376 &                    82.352673 &                    31.426028 &                 -0.561$\pm$0.099 &                -46.080$\pm$0.069 &                           &        75.565$\pm$0.284 &                                           &                                                    \\
+            &   25614 &      3447107495841475712 &                    82.083455 &                    31.048402 &                 -2.399$\pm$0.088 &                -53.567$\pm$0.066 &         -21.34$\pm$  0.30 &       132.969$\pm$1.180 &                          -0.094$\pm$0.006 &                                                  c \\
+ \hline 484 &   26309 &      2907397747897070336 &                    84.043022 &                   -28.708027 &                 25.325$\pm$0.054 &                 -3.082$\pm$0.073 &                           &        58.897$\pm$0.154 &                                           &                                                    \\
+            &   26453 &      2907308172059100544 &                    84.415231 &                   -28.626307 &                 24.080$\pm$0.034 &                 -3.100$\pm$0.041 &          26.05$\pm$  0.45 &        59.114$\pm$0.083 &                          -0.460$\pm$0.002 &                                                    \\
+ \hline 487 &   26680 &      3339560999352744960 &                    85.048812 &                    10.252564 &                 -7.541$\pm$0.119 &                -28.727$\pm$0.092 &          29.53$\pm$  0.54 &        82.925$\pm$0.369 &                                           &                                                    \\
+            &   26646 &      3339565461821955712 &                    84.946518 &                    10.339045 &                 -8.312$\pm$0.085 &                -29.008$\pm$0.069 &          30.69$\pm$  0.68 &        82.508$\pm$0.328 &                          -0.718$\pm$0.004 &                                                    \\
+ \hline 489 &   27069 &      3023084272561678976 &                    86.106147 &                    -5.464855 &                 14.670$\pm$0.080 &                -23.036$\pm$0.085 &                           &        87.312$\pm$0.462 &                                           &                                                    \\
+            &   26588 &      3017087261266087552 &                    84.773120 &                    -5.897631 &                 15.729$\pm$0.086 &                -21.779$\pm$0.080 &          25.40$\pm$  0.74 &        89.594$\pm$0.410 &                           0.333$\pm$0.004 &                                                    \\
+ \hline 492 &   27791 &      3454470100579668992 &                    88.219656 &                    34.444815 &                 -8.834$\pm$0.110 &                -71.574$\pm$0.089 &         -37.59$\pm$  5.29 &        89.428$\pm$0.675 &                                           &                                                a,b \\
+            &   28872 &      3453690993510788480 &                    91.436317 &                    36.934039 &                 -8.260$\pm$0.080 &                -70.593$\pm$0.066 &          25.30$\pm$  0.50 &       109.959$\pm$0.579 &                           0.798$\pm$0.005 &                                                c,d \\
+ \hline 499 &   31323 &      3382205557837836288 &                    98.529539 &                    22.123988 &                 -8.301$\pm$0.087 &                -35.555$\pm$0.073 &                           &        94.444$\pm$0.524 &                                           &                                                  a \\
+            &   31316 &      3382205592197580928 &                    98.515108 &                    22.117513 &                 -7.316$\pm$0.092 &                -34.348$\pm$0.076 &         -26.28$\pm$  0.30 &        94.856$\pm$0.692 &                          -1.610$\pm$0.008 &                                                    \\
+ \hline 510 &   35341 &       948509515477490560 &                   109.509153 &                    40.883448 &                -12.784$\pm$0.165 &                 12.065$\pm$0.155 &                           &        95.725$\pm$1.022 &                                           &                                                    \\
+            &   35799 &       974093501788080384 &                   110.764196 &                    45.000203 &                -11.563$\pm$0.064 &                 -5.904$\pm$0.039 &          32.57$\pm$  0.27 &     1029.404$\pm$39.123 &                           1.617$\pm$0.031 &                                                  c \\
+ \hline 525 &   41081 &      5322206718812246656 &                   125.729666 &                   -52.123645 &                -23.039$\pm$0.140 &                 19.548$\pm$0.117 &                           &        73.249$\pm$0.382 &                                           &                                                    \\
+            &   40916 &      5320716335102626048 &                   125.251760 &                   -52.227884 &                -22.095$\pm$0.056 &                 19.644$\pm$0.059 &                           &        72.713$\pm$0.138 &                          -0.402$\pm$0.003 &                                                    \\
+ \hline 527 &   41880 &      3076534861386561536 &                   128.092411 &                    -0.937638 &               -133.683$\pm$0.073 &                 83.519$\pm$0.053 &          15.31$\pm$  0.29 &        69.099$\pm$0.201 &                                           &                                                    \\
+            &   41881 &      3076535243639085440 &                   128.096341 &                    -0.927400 &               -135.608$\pm$0.076 &                 81.968$\pm$0.056 &          14.85$\pm$  0.35 &        69.356$\pm$0.222 &                          -1.878$\pm$0.003 &                                                    \\
+ \hline 540 &   45811 &      5742852762061629056 &                   140.120838 &                    -9.555820 &                -12.896$\pm$0.462 &                -27.707$\pm$0.536 &          25.14$\pm$  0.16 &        68.539$\pm$1.707 &                                           &                                                    \\
+            &   45802 &      5742848123496954112 &                   140.087475 &                    -9.610300 &                -13.982$\pm$0.178 &                -29.110$\pm$0.155 &          31.99$\pm$  1.32 &        66.917$\pm$0.523 &                          -1.124$\pm$0.015 &                                                  d \\
+ \hline 541 &   45937 &      5310444491348428544 &                   140.506149 &                   -54.543106 &                 18.112$\pm$0.055 &                120.947$\pm$0.055 &          91.12$\pm$  0.16 &        67.899$\pm$0.139 &                                           &                                                    \\
+            &   45952 &      5310446621652246144 &                   140.579963 &                   -54.464723 &                 22.511$\pm$0.108 &                114.544$\pm$0.121 &                           &        67.493$\pm$0.238 &                          -0.977$\pm$0.002 &                                                    \\
+ \hline 542 &   46298 &      1131772432806417280 &                   141.620478 &                    78.437919 &                 30.488$\pm$0.071 &                 26.021$\pm$0.069 &         -10.71$\pm$  0.18 &        53.853$\pm$0.117 &                                           &                                                    \\
+            &   46299 &      1131771646828736000 &                   141.625549 &                    78.429867 &                 34.502$\pm$0.053 &                 25.967$\pm$0.066 &         -11.18$\pm$  0.21 &        53.877$\pm$0.096 &                          -2.117$\pm$0.005 &                                                    \\
+ \hline 546 &   47017 &      5249310751464090112 &                   143.734891 &                   -64.999265 &                -34.698$\pm$0.058 &                 43.970$\pm$0.051 &          44.93$\pm$ 14.31 &        87.442$\pm$0.228 &                                           &                                                    \\
+            &   47351 &      5249282164160875136 &                   144.725079 &                   -64.990582 &                -34.905$\pm$0.051 &                 41.369$\pm$0.050 &          22.62$\pm$  1.01 &        90.548$\pm$0.222 &                          -0.187$\pm$0.002 &                                                  d \\
+ \hline 549 &   47231 &      1050821477623210368 &                   144.406188 &                    60.213545 &                -11.880$\pm$0.065 &                -32.046$\pm$0.053 &           9.19$\pm$  0.13 &       112.655$\pm$0.488 &                                           &                                                    \\
+            &   46170 &      1038770314786277248 &                   141.234404 &                    59.993030 &                -17.608$\pm$0.054 &                -20.520$\pm$0.055 &         -19.63$\pm$  0.28 &       103.250$\pm$0.378 &                           0.478$\pm$0.003 &                                                  d \\
+ \hline 550 &   47335 &      5247416705243609088 &                   144.688027 &                   -66.858881 &                -36.613$\pm$0.052 &                 45.089$\pm$0.053 &                           &        85.534$\pm$0.230 &                                           &                                                    \\
+            &   47017 &      5249310751464090112 &                   143.734891 &                   -64.999265 &                -34.698$\pm$0.058 &                 43.970$\pm$0.051 &          44.93$\pm$ 14.31 &        87.442$\pm$0.228 &                           0.458$\pm$0.002 &                                                    \\
+ \hline 551 &   47399 &       813906786608830464 &                   144.864275 &                    42.285845 &                 -6.119$\pm$0.063 &                 -6.587$\pm$0.065 &          -3.36$\pm$  0.48 &        74.017$\pm$0.272 &                                           &                                                    \\
+            &   47851 &       801608096216800000 &                   146.304399 &                    41.155079 &                 -1.902$\pm$0.089 &                 -3.864$\pm$0.100 &                           &       370.751$\pm$9.574 &                           0.782$\pm$0.019 &                                                  c \\
+ \hline 557 &   51536 &       828983049535772928 &                   157.894852 &                    43.264808 &                -20.822$\pm$0.059 &                 15.860$\pm$0.084 &                           &        99.483$\pm$0.437 &                                           &                                                    \\
+            &   51726 &       828895294768816000 &                   158.531822 &                    43.464793 &                -11.095$\pm$0.080 &                  8.714$\pm$0.105 &         -11.98$\pm$  0.33 &       142.610$\pm$1.172 &                           0.028$\pm$0.006 &                                                  c \\
+ \hline 558 &   51608 &      5229614856076359168 &                   158.134154 &                   -72.428414 &                -56.798$\pm$0.047 &                -45.861$\pm$0.046 &           0.37$\pm$  0.20 &        70.927$\pm$0.136 &                                           &                                                    \\
+            &   51611 &      5229612622693362048 &                   158.145528 &                   -72.441652 &                -56.698$\pm$0.043 &                -46.489$\pm$0.037 &           0.40$\pm$  0.54 &        70.918$\pm$0.112 &                          -1.771$\pm$0.002 &                                                    \\
+ \hline 582 &   57950 &      5343610331876174336 &                   178.283059 &                   -56.727293 &                -39.410$\pm$0.058 &                -10.227$\pm$0.052 &          13.36$\pm$  0.66 &       102.128$\pm$0.460 &                                           &                                                    \\
+            &   59716 &      6075548419252906368 &                   183.711072 &                   -55.789916 &                -35.722$\pm$0.050 &                -11.041$\pm$0.042 &          14.22$\pm$  1.23 &       114.852$\pm$0.518 &                           0.776$\pm$0.004 &                                                    \\
+ \hline 588 &   58751 &      3575541998835891456 &                   180.749457 &                   -10.752474 &                 33.041$\pm$0.105 &                -18.763$\pm$0.077 &         -12.39$\pm$  0.20 &        57.262$\pm$0.183 &                                           &                                                    \\
+            &   58722 &      3575542995268304512 &                   180.664538 &                   -10.713711 &                 33.067$\pm$0.840 &                -20.664$\pm$0.747 &         -16.16$\pm$  0.70 &        54.426$\pm$1.115 &                          -1.047$\pm$0.010 &                                                  d \\
+ \hline 589 &   58813 &      6147474037517738624 &                   180.943487 &                   -44.122728 &                 98.970$\pm$0.059 &                 18.173$\pm$0.039 &           6.41$\pm$  0.12 &        53.089$\pm$0.131 &                                           &                                                    \\
+            &   58815 &      6147474071877478144 &                   180.949433 &                   -44.117898 &                101.361$\pm$0.055 &                 15.724$\pm$0.036 &           6.14$\pm$  0.17 &        52.952$\pm$0.126 &                          -2.224$\pm$0.010 &                                                  b \\
+ \hline 592 &   59243 &      5788355123068307328 &                   182.281096 &                   -78.781346 &                -43.364$\pm$0.062 &                 -7.619$\pm$0.060 &                           &        99.808$\pm$0.327 &                                           &                                                    \\
+            &   58490 &      5224879500011370496 &                   179.925399 &                   -76.023964 &                -41.025$\pm$0.043 &                 -6.190$\pm$0.038 &          12.63$\pm$  1.40 &        99.746$\pm$0.231 &                           0.689$\pm$0.002 &                                                    \\
+ \hline 595 &   59865 &      6054216931644194304 &                   184.157892 &                   -63.197879 &               -145.407$\pm$0.046 &                  6.329$\pm$0.041 &          -9.93$\pm$  0.16 &        68.919$\pm$0.157 &                                           &                                                    \\
+            &   59913 &      6054219165008718848 &                   184.342422 &                   -63.226932 &               -145.829$\pm$0.047 &                  7.784$\pm$0.045 &          -9.15$\pm$  0.19 &        69.046$\pm$0.166 &                          -0.974$\pm$0.002 &                                                    \\
+ \hline 596 &   59898 &      5860789299912353024 &                   184.275888 &                   -65.693002 &                -38.331$\pm$0.083 &                -10.073$\pm$0.077 &                           &       105.943$\pm$0.604 &                                           &                                                    \\
+            &   60183 &      5860587917472173056 &                   185.117150 &                   -65.842707 &                -41.434$\pm$0.100 &                -11.322$\pm$0.084 &                           &        97.363$\pm$0.587 &                          -0.175$\pm$0.005 &                                                    \\
+ \hline 597 &   59960 &      6072902994276659200 &                   184.471331 &                   -55.975581 &                -39.014$\pm$0.057 &                -12.872$\pm$0.046 &                           &       103.334$\pm$0.458 &                                           &                                                    \\
+            &   59716 &      6075548419252906368 &                   183.711072 &                   -55.789916 &                -35.722$\pm$0.050 &                -11.041$\pm$0.042 &          14.22$\pm$  1.23 &       114.852$\pm$0.518 &                          -0.053$\pm$0.004 &                                                    \\
+ \hline 607 &   61135 &      3907637494456207360 &                   187.913755 &                    12.127870 &                -57.344$\pm$0.128 &                  3.719$\pm$0.078 &                           &       106.825$\pm$0.700 &                                           &                                                    \\
+            &   61416 &      3931759748777206272 &                   188.777443 &                    12.938992 &                -57.292$\pm$0.155 &                  6.364$\pm$0.073 &          17.46$\pm$  0.19 &       107.151$\pm$0.850 &                           0.339$\pm$0.006 &                                                    \\
+ \hline 610 &   61937 &      3927438771159865856 &                   190.392833 &                    10.426268 &               -106.518$\pm$0.092 &                 -0.193$\pm$0.057 &                           &        71.160$\pm$0.247 &                                           &                                                  b \\
+            &   62350 &      3927604694336986368 &                   191.641939 &                    11.378495 &               -112.544$\pm$0.114 &                 -0.472$\pm$0.059 &         -17.49$\pm$  0.14 &        65.405$\pm$0.297 &                           0.267$\pm$0.003 &                                                    \\
+ \hline 620 &   65466 &      1446271417351852544 &                   201.277774 &                    23.854387 &                -10.836$\pm$0.220 &                 -7.596$\pm$0.194 &                           &        90.650$\pm$0.841 &                                           &                                                    \\
+            &   65508 &      1448260262087566848 &                   201.413988 &                    25.682150 &                -10.309$\pm$0.088 &                 -8.666$\pm$0.071 &          -0.35$\pm$  0.66 &        86.755$\pm$0.292 &                           0.453$\pm$0.006 &                                                    \\
+ \hline 624 &   65779 &      5863709946382545280 &                   202.275373 &                   -66.073676 &               -127.902$\pm$0.048 &                 11.368$\pm$0.056 &         -24.72$\pm$  0.29 &        78.909$\pm$0.228 &                                           &                                                    \\
+            &   65785 &      5863709946382541952 &                   202.289332 &                   -66.078529 &               -127.318$\pm$0.041 &                 11.056$\pm$0.050 &         -24.52$\pm$  0.35 &        78.838$\pm$0.207 &                          -1.989$\pm$0.008 &                                                    \\
+ \hline 626 &   65899 &      1442870284289795968 &                   202.628390 &                    22.512881 &                 25.400$\pm$0.076 &                -45.436$\pm$0.034 &         -35.48$\pm$  0.18 &        83.756$\pm$0.263 &                                           &                                                    \\
+            &   65884 &      1441682158897145600 &                   202.579217 &                    21.500051 &                 22.957$\pm$0.075 &                -49.366$\pm$0.032 &          58.12$\pm$  0.30 &        87.091$\pm$0.277 &                           0.179$\pm$0.003 &                                                  d \\
+ \hline 630 &   66749 &      6293670601102816128 &                   205.211181 &                   -17.792721 &                -36.521$\pm$0.086 &                -11.333$\pm$0.079 &          -8.19$\pm$  0.46 &        90.540$\pm$0.458 &                                           &                                                    \\
+            &   66717 &      6293764540627556224 &                   205.135238 &                   -17.343786 &                -45.844$\pm$0.116 &                -13.594$\pm$0.112 &          -1.02$\pm$  0.51 &       108.416$\pm$1.021 &                          -0.103$\pm$0.006 &                                                c,d \\
+ \hline 633 &   67250 &      1496459690754708736 &                   206.748323 &                    38.542600 &               -134.290$\pm$0.088 &                -22.464$\pm$0.115 &         -11.20$\pm$  0.13 &        92.492$\pm$0.788 &                                           &                                                    \\
+            &   67041 &      1496708798857641600 &                   206.083788 &                    38.797635 &               -141.262$\pm$0.026 &                -23.293$\pm$0.038 &         -32.94$\pm$  0.18 &        95.946$\pm$0.296 &                          -0.022$\pm$0.005 &                                                  d \\
+ \hline 635 &   67470 &      3728726646011331328 &                   207.399613 &                    13.010410 &               -147.396$\pm$0.067 &                 25.352$\pm$0.059 &                           &        56.281$\pm$0.141 &                                           &                                                  b \\
+            &   67673 &      3728039760481678592 &                   207.961829 &                    11.937313 &               -149.496$\pm$0.077 &                 25.658$\pm$0.055 &          -2.80$\pm$  0.48 &        58.219$\pm$0.162 &                           0.081$\pm$0.002 &                                                    \\
+ \hline 636 &   67639 &      6094716308525121408 &                   207.884045 &                   -48.293349 &               -114.076$\pm$0.108 &                -27.236$\pm$0.101 &           5.75$\pm$  0.18 &        68.484$\pm$0.284 &                                           &                                                    \\
+            &   67645 &      6094716239805635072 &                   207.893709 &                   -48.298861 &               -113.740$\pm$0.104 &                -26.793$\pm$0.102 &           4.72$\pm$  0.22 &        68.085$\pm$0.278 &                          -1.996$\pm$0.013 &                                                    \\
+ \hline 642 &   68830 &      6291206045789315328 &                   211.410852 &                   -18.072550 &                 39.425$\pm$0.094 &                -45.424$\pm$0.076 &          15.18$\pm$ 12.84 &        88.382$\pm$0.436 &                                           &                                                    \\
+            &   68833 &      6291205977069837696 &                   211.412416 &                   -18.081112 &                 37.270$\pm$0.094 &                -44.559$\pm$0.081 &          28.05$\pm$  0.18 &        89.125$\pm$0.420 &                          -1.871$\pm$0.008 &                                                  d \\
+ \hline 655 &   71726 &      1282815063829295360 &                   220.077109 &                    30.443646 &                 93.410$\pm$0.064 &                -44.363$\pm$0.086 &         -11.80$\pm$  0.15 &        54.983$\pm$0.136 &                                           &                                                    \\
+            &   71737 &      1282817022334383232 &                   220.118799 &                    30.520323 &                 93.470$\pm$0.073 &                -43.678$\pm$0.095 &         -11.49$\pm$  0.14 &        54.724$\pm$0.156 &                          -1.091$\pm$0.002 &                                                    \\
+ \hline 677 &   76046 &      4414349489701257984 &                   232.953494 &                    -2.066574 &                -79.827$\pm$0.083 &                -30.371$\pm$0.071 &          -9.52$\pm$  0.26 &        76.037$\pm$0.302 &                                           &                                                    \\
+            &   75923 &      4416093315142832128 &                   232.604610 &                    -1.318934 &                -70.150$\pm$0.072 &                -28.983$\pm$0.060 &         -25.82$\pm$  1.27 &        67.463$\pm$0.203 &                           0.014$\pm$0.003 &                                                  d \\
+ \hline 678 &   76133 &      4416110082695309184 &                   233.241330 &                    -1.186582 &                -17.765$\pm$0.214 &                -42.217$\pm$0.205 &         -15.85$\pm$  0.15 &        82.944$\pm$0.887 &                                           &                                                    \\
+            &   77728 &      4403070149671286656 &                   238.052074 &                    -2.278682 &                -15.408$\pm$0.093 &                -43.981$\pm$0.066 &          -3.50$\pm$  0.26 &        88.630$\pm$0.468 &                           0.868$\pm$0.007 &                                                  d \\
+ \hline 691 &   78283 &      1202709349617637632 &                   239.757321 &                    18.325889 &                -59.445$\pm$0.065 &                  2.520$\pm$0.058 &         -61.82$\pm$  0.16 &        71.079$\pm$0.306 &                                           &                                                    \\
+            &   78067 &      1204270110670555136 &                   239.094563 &                    20.418776 &                -56.658$\pm$0.058 &                  9.315$\pm$0.061 &         -18.21$\pm$  0.71 &        80.184$\pm$0.321 &                           0.460$\pm$0.004 &                                                  d \\
+ \hline 704 &   80886 &      1299204074916904320 &                   247.745828 &                    23.985828 &                -30.683$\pm$0.041 &                 31.931$\pm$0.050 &         -20.02$\pm$  0.23 &        74.958$\pm$0.181 &                                           &                                                    \\
+            &   81875 &      1299508639637961344 &                   250.861555 &                    23.196612 &                -30.122$\pm$0.032 &                 30.284$\pm$0.045 &         -40.40$\pm$  0.29 &        99.969$\pm$0.249 &                           0.655$\pm$0.002 &                                                c,d \\
+ \hline 707 &   81641 &      4434301983614947072 &                   250.161198 &                     4.219745 &                  0.353$\pm$0.175 &                -10.476$\pm$0.134 &                           &       101.209$\pm$1.084 &                                           &                                                    \\
+            &   81634 &      4434301841878055296 &                   250.146462 &                     4.207160 &                  0.364$\pm$0.124 &                 -9.859$\pm$0.095 &                           &        99.832$\pm$0.640 &                          -1.469$\pm$0.008 &                                                    \\
+ \hline 713 &   84054 &      4571879578631697024 &                   257.763126 &                    24.237827 &                -11.782$\pm$0.054 &                 30.655$\pm$0.056 &                           &        80.848$\pm$0.272 &                                           &                                                    \\
+            &   84070 &      4571879475552172544 &                   257.820456 &                    24.252545 &                -11.230$\pm$0.037 &                 29.770$\pm$0.042 &                           &        79.667$\pm$0.190 &                          -1.119$\pm$0.003 &                                                    \\
+ \hline 715 &   84515 &      4388409330344765056 &                   259.153687 &                     3.408540 &                -60.249$\pm$0.072 &                 19.568$\pm$0.063 &         -14.44$\pm$  0.22 &        82.661$\pm$0.311 &                                           &                                                    \\
+            &   85911 &      4485937214320449280 &                   263.339536 &                     5.700825 &                -54.948$\pm$0.083 &                 21.769$\pm$0.071 &         -22.79$\pm$  0.29 &        73.460$\pm$0.234 &                           0.812$\pm$0.003 &                                                  d \\
+ \hline 726 &   85940 &      4487578544660527488 &                   263.469996 &                     8.103517 &                -16.092$\pm$0.099 &                -59.011$\pm$0.087 &         -28.07$\pm$  0.18 &        90.978$\pm$0.397 &                                           &                                                  b \\
+            &   85944 &      4487581018562340992 &                   263.483482 &                     8.165793 &                -13.134$\pm$0.087 &                -60.275$\pm$0.084 &                           &        90.133$\pm$0.337 &                          -0.997$\pm$0.004 &                                                    \\
+ \hline 737 &   88782 &      6719536193567989120 &                   271.858999 &                   -46.899274 &                -32.617$\pm$0.086 &               -106.932$\pm$0.081 &         -83.59$\pm$  0.12 &        71.053$\pm$0.322 &                                           &                                                    \\
+            &   87887 &      5954345541675673728 &                   269.293720 &                   -46.122032 &                -43.037$\pm$0.096 &               -102.548$\pm$0.085 &          19.85$\pm$  0.25 &        84.984$\pm$0.363 &                           0.419$\pm$0.004 &                                                c,d \\
+ \hline 740 &   89373 &      6721441784663730816 &                   273.581281 &                   -43.154515 &                 -0.873$\pm$0.104 &                -53.633$\pm$0.091 &         -44.16$\pm$  0.33 &       103.306$\pm$0.605 &                                           &                                                    \\
+            &   89274 &      6724728980838829952 &                   273.257554 &                   -42.288522 &                 -5.729$\pm$0.101 &                -51.286$\pm$0.087 &                           &       109.826$\pm$0.798 &                           0.223$\pm$0.006 &                                                    \\
+ \hline 743 &   90026 &      6649398690418063232 &                   275.541876 &                   -55.564195 &                 77.717$\pm$0.075 &                  1.586$\pm$0.076 &                           &        96.083$\pm$0.534 &                                           &                                                    \\
+            &   90028 &      6649398690418059392 &                   275.542705 &                   -55.572839 &                 79.534$\pm$0.073 &                  1.748$\pm$0.068 &          -5.14$\pm$  0.16 &        96.934$\pm$0.538 &                          -1.836$\pm$0.013 &                                                    \\
+ \hline 749 &   93029 &      2133995118527034496 &                   284.270902 &                    51.720942 &                 43.638$\pm$0.057 &                 -5.617$\pm$0.055 &           1.76$\pm$  0.46 &        84.236$\pm$0.185 &                                           &                                                    \\
+            &   92467 &      2143913950359678464 &                   282.666306 &                    49.767527 &                 45.000$\pm$0.042 &                 -1.773$\pm$0.051 &         -12.52$\pm$  0.40 &        86.532$\pm$0.173 &                           0.516$\pm$0.002 &                                                  d \\
+ \hline 756 &   96979 &      4301163357576782464 &                   295.691253 &                     8.382994 &                 23.989$\pm$0.081 &                 53.912$\pm$0.053 &         -40.83$\pm$  0.17 &        60.953$\pm$0.220 &                                           &                                                    \\
+            &   96976 &      4301163323217046912 &                   295.684014 &                     8.380594 &                 23.964$\pm$0.074 &                 52.346$\pm$0.050 &         -41.00$\pm$  0.16 &        60.950$\pm$0.186 &                          -2.095$\pm$0.005 &                                                    \\
+ \hline 759 &   97646 &      6447036152303430528 &                   297.686877 &                   -59.193721 &                 23.300$\pm$0.463 &                -12.433$\pm$0.407 &                           &        85.947$\pm$2.503 &                                           &                                                    \\
+            &   97581 &      6447030139349235200 &                   297.514014 &                   -59.264087 &                 24.031$\pm$0.114 &                -15.899$\pm$0.082 &                           &        91.402$\pm$0.617 &                          -0.757$\pm$0.015 &                                                    \\
+ \hline 761 &   98174 &      6447100091479968256 &                   299.276478 &                   -58.901415 &                 23.248$\pm$0.230 &                -14.783$\pm$0.246 &                           &        90.149$\pm$1.382 &                                           &                                                    \\
+            &   97646 &      6447036152303430528 &                   297.686877 &                   -59.193721 &                 23.300$\pm$0.463 &                -12.433$\pm$0.407 &                           &        85.947$\pm$2.503 &                           0.125$\pm$0.019 &                                                    \\
+ \hline 768 &   99689 &      1808691203160200576 &                   303.437164 &                    16.157968 &                 -7.280$\pm$1.319 &                  5.631$\pm$1.216 &                           &      124.509$\pm$12.288 &                                           &                                                    \\
+            &  100451 &      1808808571723073152 &                   305.555561 &                    16.372994 &                  1.538$\pm$0.067 &                  0.497$\pm$0.060 &                           &       328.737$\pm$4.829 &                           0.908$\pm$0.033 &                                                  c \\
+ \hline 770 &   99729 &      4249652990144051840 &                   303.540141 &                     6.588725 &               -132.528$\pm$0.101 &                -58.445$\pm$0.064 &          -0.18$\pm$  0.20 &        63.078$\pm$0.208 &                                           &                                                    \\
+            &   99727 &      4249652783985617920 &                   303.537683 &                     6.576958 &               -129.729$\pm$0.096 &                -59.388$\pm$0.065 &          -0.21$\pm$  0.19 &        63.093$\pm$0.203 &                          -1.878$\pm$0.004 &                                                    \\
+ \hline 776 &  100941 &      6679307846231740032 &                   306.999982 &                   -42.620131 &                 94.662$\pm$0.082 &               -122.858$\pm$0.057 &                           &       104.908$\pm$0.685 &                                           &                                                    \\
+            &  100937 &      6679308018030433536 &                   306.986590 &                   -42.620666 &                 93.796$\pm$0.078 &               -122.511$\pm$0.055 &         -62.19$\pm$  0.23 &       105.016$\pm$0.629 &                          -1.743$\pm$0.009 &                                                    \\
+ \hline 777 &  101082 &      2298101352139398144 &                   307.366686 &                    81.092228 &                 66.243$\pm$0.082 &                221.381$\pm$0.105 &         -14.38$\pm$  0.17 &        64.364$\pm$0.211 &                                           &                                                    \\
+            &  101166 &      2298101901895214720 &                   307.593111 &                    81.140436 &                 66.494$\pm$0.058 &                221.043$\pm$0.070 &         -14.24$\pm$  0.27 &        64.049$\pm$0.124 &                          -1.176$\pm$0.002 &                                                    \\
+ \hline 780 &  101719 &      2195226749280378368 &                   309.283271 &                    61.364403 &                 23.834$\pm$0.051 &                -42.621$\pm$0.048 &           3.21$\pm$  0.18 &        57.493$\pm$0.082 &                                           &                                                    \\
+            &  102727 &      2194321816851242624 &                   312.239000 &                    61.118583 &                 19.428$\pm$0.053 &                -40.421$\pm$0.050 &          -9.36$\pm$  0.18 &        65.332$\pm$0.122 &                           0.189$\pm$0.001 &                                                  d \\
+ \hline 782 &  102725 &      6376446646806738816 &                   312.236006 &                   -68.791520 &                 42.026$\pm$0.043 &                -61.530$\pm$0.069 &                           &        85.988$\pm$0.270 &                                           &                                                    \\
+            &  103917 &      6375793502540188800 &                   315.826134 &                   -69.171496 &                 44.104$\pm$0.053 &                -59.448$\pm$0.055 &         -10.04$\pm$  0.17 &        87.808$\pm$0.446 &                           0.309$\pm$0.004 &                                                    \\
+ \hline 784 &  103107 &      6481251098731588224 &                   313.358335 &                   -49.383030 &                 43.599$\pm$0.064 &                -30.438$\pm$0.051 &         -16.94$\pm$  0.28 &        89.053$\pm$0.300 &                                           &                                                    \\
+            &  103139 &      6481246906845850880 &                   313.465930 &                   -49.449714 &                 43.875$\pm$0.051 &                -27.428$\pm$0.044 &         -17.98$\pm$  0.43 &        89.993$\pm$0.292 &                          -0.821$\pm$0.003 &                                                    \\
+ \hline 793 &  104536 &      1839746393680655232 &                   317.629011 &                    22.457052 &                 22.239$\pm$0.137 &                -11.888$\pm$0.138 &                           &       116.759$\pm$1.188 &                                           &                                                    \\
+            &  102981 &      1838905954482116480 &                   312.957870 &                    21.868618 &                 20.705$\pm$0.081 &                -11.991$\pm$0.072 &         -11.55$\pm$  0.18 &       108.378$\pm$0.582 &                           0.933$\pm$0.007 &                                                    \\
+ \hline 802 &  109306 &      6611824083124944384 &                   332.177751 &                   -33.125589 &                 13.261$\pm$0.078 &                 24.447$\pm$0.081 &                           &        78.654$\pm$0.344 &                                           &                                                    \\
+            &  110433 &      6599619950733282304 &                   335.519158 &                   -34.488798 &                 11.670$\pm$0.060 &                 25.950$\pm$0.066 &                           &        86.438$\pm$0.281 &                           0.649$\pm$0.003 &                                                    \\
+ \hline 815 &  112537 &      2396293134977302272 &                   341.906431 &                   -23.172364 &                 24.576$\pm$0.071 &                -10.583$\pm$0.065 &          -3.25$\pm$  0.37 &        78.726$\pm$0.286 &                                           &                                                    \\
+            &  111596 &      6628071944405827712 &                   339.129743 &                   -21.584986 &                 31.319$\pm$0.072 &                 -4.837$\pm$0.062 &          11.06$\pm$  1.60 &       106.288$\pm$0.444 &                           0.688$\pm$0.003 &                                                c,d \\
+ \hline 839 &  117454 &      2337899270721594752 &                   357.237150 &                   -25.144889 &                -13.177$\pm$0.093 &                -42.966$\pm$0.111 &          -3.30$\pm$  0.83 &        85.714$\pm$0.686 &                                           &                                                    \\
+            &  117720 &      2338428513772452480 &                   358.123916 &                   -24.165778 &                -15.355$\pm$0.095 &                -39.481$\pm$0.069 &          44.28$\pm$  0.67 &       113.458$\pm$0.771 &                           0.343$\pm$0.006 &                                                c,d \\
+\end{longtable}
+\end{landscape}	
+
+
+
+
+
+
+\section*{Acknowledgments}
+
+XH and RAMC acknowledge the support of DGAPA-UNAM PAPIIT IN-104517 and CONACyT.
+
+
+
+
+%When the reference forms part of the sentence, it should not
+%be typed in superscripts, e.g.: ``One can show from
+%Ref.~\refcite{edbk} that $\ldots$'', ``See
+%Refs.~\citen{jpap,colla,edbk}, \citen{seri}
+%and \citen{publ} for more details.''
+%This is done using the LaTeX
+%command: ``\verb|Ref.~\refcite{name}|''.
+
+%\begin{thebibliography}{000} %for 3 digits
+%\begin{thebibliography}{00}  %for 2 digits
+\begin{thebibliography}{0}    %for 1 digit
+
+\bibitem{Ko15} Koposov S. E. et al., ApJ {\bf 811} (2015) 62
+\bibitem{Sa12} Salucci P., Wilkinson M. I., Walker M. G., Gilmore G. F., Grebel E. K.,
+  Koch A., Frigerio M. C. \& Wyse R. F. G., MNRAS {\bf 420} (2012) 2034
+\bibitem{Le17} Lelli F., McGaugh S. S. \& Schombert J. M., MNRAS {\bf 468} (2017) L68
+\bibitem{Du18} Durazo R., Hernandez X., Cervantes Sodi B., \& Sanchez, S. F., ApJ {\bf 863} (2018) 107
+\bibitem{Sc03} Scarpa R., Marconi G. \& Gilmozzi R., A\&A {\bf 405} (2003) L15
+\bibitem{Sc11} Scarpa R., Marconi G., Carraro G., Falomo R. \& Villanova S., A\&A {\bf 525}  (2011) A148
+\bibitem{Mi84} Milgrom M., ApJ {\bf 287} (1984) 571
+\bibitem{Sa02} Sanders R. H. \& McGaugh S. S., ARA\&A {\bf 40} (2002) 263
+\bibitem{He12} Hernandez X., Jimenez M. A. \& Allen C., Eur. Phys. J. C {\bf 72} (2012) 1884
+\bibitem{Sh11} Shaya E. J. \& Olling R. P., ApJS {\bf 192} (2011) 2
+\bibitem{Ji10} Jiang Y.-F. \& Tremaine S., MNRAS {\bf 401} (2010) 977
+\bibitem{Sc17} Scarpa R., Ottolina R., Falomo R., Treves A., Int. J. Mod. Phys. {\bf 26} (2017) 1750067
+\bibitem{Pi18} Pittordis C. \& Sutherland W., MNRAS {\bf 480} (2018) 1778
+\bibitem{Ban18} Banik I. \& Zhao H., MNRAS {\bf 480} (2018) 2660
+\bibitem{Ma18} Marrese P. M., Marinoni S., Fabrizio M. \& Altavilla G., arXiv:180809151 (2018)
+\bibitem{Ga18} Gaia Collaboration, A\&A {\bf 616} (2018) 1
+\bibitem{Ho00} H{\o}g E., et al., A\&A {\bf 357} (2000) 367 
+\bibitem{Fa02} Fabricius C., H{\o}g E., Makarov V.V., Mason B.D., Wycoff G.L. \& Urban S.E., A\&A {\bf 384} (2002) 180
+\bibitem{Sm68} Smart W. M., 1968, Stellar Kinematics. Longmans, London
+\bibitem{Oh17} Oh S., Price-Whelan A. M., Hogg D. W., Morton T. D. \& Spergel D. N., AJ {\bf 153} (2017) 257
+\bibitem{Mi11} Milgrom, M., AcPPB {\bf42} (2011) 2175
+\bibitem{Ca11} Capozziello, S., \& De Laurentis, M., PhR {\bf 509} (2011) 167
+\bibitem{Ve17} Verlinde, E., SciPostPhys {\bf 2}  (2017) 016
+\bibitem{Bar18} Barrientos, E., \& Mendoza, S., Phys. Rev. D {\bf 98} (2018) 084033
+
+
+  
+\end{thebibliography}
+
+\end{document}

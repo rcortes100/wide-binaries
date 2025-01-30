@@ -1,0 +1,35 @@
+Header prototype:
+
+1.  source_id_1
+2.  source_id_2
+3.  ra_1 		(deg)
+4.  ra_err_1 		(mas)
+5.  dec_1		(deg)
+6.  dec_err_1		(mas)
+7.  ra_2		(deg)
+8.  ra_err_2		(mas)
+9.  dec_2		(deg)
+10. dec_err_2		(mas)
+11. parallax_1		(mas)
+12. parallax_err_1	(mas)
+13. parallax_2		(mas)
+14. parallax_err_2	(mas)
+15. pmra_1		(mas/yr)
+16. pmra_err_1		(mas/yr)
+17. pmdec_1		(mas/yr)
+18. pmdec_err_1		(mas/yr)
+19. rvel_1		(km/s)
+20. rvel_err_1		(km/s)
+21. pmra_2		(mas/yr)
+22. pmra_err_2		(mas/yr)
+23. pmdec_2		(mas/yr)
+24. pmdec_err_2		(mas/yr)
+25. rvel_2		(km/s)
+26. rvel_err_2		(km/s)
+27. G_1			(mag)
+28. G_2			(mag)
+29. dradial		(parsec)  1000*ABS(t1.parallax-t2.parallax)/(t1.parallax*t2.parallax)
+30. dtang		(deg) DISTANCE(POINT('ICRS',t1.ra,t1.dec),POINT('ICRS',t2.ra,t2.dec))
+31. separation		(parsec) 1000*SQRT(POWER(1/t1.parallax-1/t2.parallax,2)+(COS(t1.dec*PI()/180)*COS(t2.dec*PI()/180)*POWER(t1.ra-t2.ra,2)+POWER(t1.dec-t2.d
+ec,2))*POWER(PI()/180,2)/(t1.parallax*t2.parallax))
+

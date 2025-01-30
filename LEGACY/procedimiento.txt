@@ -1,0 +1,18 @@
+PRIMERO SE HACE UNA BUSQUEDA GENERAL:
+    a) Parallax > 4 mas (dentro de 250 pc)
+    b) Magnitud aparente G <= 14
+    c) Magnitud absoluta entre 3 y 8 (tipo solar, F0V-K7V)
+    d) duplicated_source = False
+
+DESPUÉS SE BUSCAN CANDIDATOS A ESTRELLAS BINARIAS:
+    a) Su separación proyectada debe ser < 2pc
+    b) Su diferencia en distancia radial debe ser < 2 pc
+    c) Su diferencia en m.p.ra debe ser < 2 km/s EN REALIDAD ES 4
+    d) Su diferencia en m.p.dec debe ser < 2 km/s EN REALIDAD ES 4
+
+Mabs = G+5-5*log10(1000/parallax)
+
+DESPUÉS, SE ELIMINAN LAS ENTRADAS MÚLTIPLES.
+    a) No repetidas.
+    b) Error en parallax debe ser < 1.5 pc
+	

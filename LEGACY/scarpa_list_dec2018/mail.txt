@@ -1,0 +1,46 @@
+From: Riccardo Scarpa <riccardo.scarpa@gtc.iac.es>
+Date: mar., 11 dic. 2018 a las 16:11
+Subject: lista candidatos estrellas dobles
+To: Xavier Hernández <xavier@astro.unam.mx>
+
+
+Hola Xavier
+
+
+   aqui viene la tabla con la lista de condidatos.
+
+Te mando dos tablas.
+
+
+la primera incluye el resultado de la busqueda de todo el catalogo de gaia, pero SOLO HASTA 250pcs de distancia.
+
+O sea, el corte inicial lo puse a parallax>4 milliarcsec. A mayor distancia, el error en la parallaje misma es demasiado grande.
+
+Esta tabla puede contener la misma estrella varias veces, por ejemplo si es parte de un cumulo.
+
+Nota que la primaria no tiene que ser la mas macisa, simplemente la lista es ordenada haci como salio'del SQL.
+
+
+En la cabecera de la tabla te dice exactamene como se hizo la seleccion, incluyendo la misma query SQL en el caso Ricardo quieras repetir la seleccion o modificarla.
+
+
+La segunda tabla contiene la estrellas que aparecen en la anterior tabla solo una vez. De esta manera nos quitamos de encima
+
+todos los cumulos. 
+
+Utilizando una tercera tabla que comprendia TODAS las estrellas hasta 250pc, he calculado cuanta estrellas habia alrededor de la candidata doble. Este lo hize considerando un cubo centrado en la estrella primaria y contando todas la estrella (incluida la secundaria) en un cubo de 2 y 4 parsecs. Al incluir la secundaria, este numero es por definicion >=1.
+
+
+Bueno, pro cualquier duda me dices.
+
+
+Ciao
+
+ric
+
+
+
+----------------
+ADVERTENCIA: Sobre la privacidad y cumplimiento de la Ley de Protección de Datos, acceda a http://www.gtc.iac.es/gtc/legal_es.php
+----------------
+WARNING: For more information on privacy and fulfilment of the Law concerning the Protection of Data, consult http://www.gtc.iac.es/gtc/legal_es.php
