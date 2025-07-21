@@ -3,6 +3,14 @@
 -- Para búsqueda automatica, por ejemplo en Python, hay que cambiar el intervalo de
 -- búsqueda dentro del healpix en las tablas pri y sec
 -- Declaracion de tablas pri y sec (deben ser identicas)
+-- Notas sobre Healpix:
+-- Healpix_index van de 0 a N-1, donde para cada nivel:
+-- N = 12*4^nivel
+-- nivel 0: 12
+-- nivel 1: 48
+-- nivel 2: 192
+-- nivel 3: 768
+-- etc.
 
 WITH pri AS (
   SELECT *
